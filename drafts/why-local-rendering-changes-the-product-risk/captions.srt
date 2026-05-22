@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:07,000
+Show that local MP4 generation turns publishing into an integration problem instead of a product problem.
+
+2
+00:00:07,000 --> 00:00:14,000
+Draft packages need enough structure to be reviewed without guesswork.
+
+3
+00:00:14,000 --> 00:00:21,000
+Rendering locally proves the creative system can produce actual assets.
+
+4
+00:00:21,000 --> 00:00:28,000
+Once MP4 quality is acceptable, distribution can be handled by platform integrations.
+
+5
+00:00:28,000 --> 00:00:36,000
+When the MP4 is real, publishing is just the next integration layer.

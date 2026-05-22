@@ -1,0 +1,13 @@
+{
+  "size": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "output": "output/videos/the-minimum-useful-video-factory.mp4",
+  "thumbnail": "output/thumbnails/the-minimum-useful-video-factory.png",
+  "previewFrame": "output/previews/the-minimum-useful-video-factory.png",
+  "format": "mp4",
+  "renderStyle": "vertical text-led motion slates",
+  "designSource": "package.designBrief"
+}

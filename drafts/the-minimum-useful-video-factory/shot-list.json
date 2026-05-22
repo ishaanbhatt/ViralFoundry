@@ -1,0 +1,37 @@
+[
+  {
+    "sceneId": "hook",
+    "shotType": "hook",
+    "composition": "Bold title slate with a clear product-risk framing.",
+    "motion": "fast title resolve",
+    "textPriority": "hook"
+  },
+  {
+    "sceneId": "takeaway-1",
+    "shotType": "explain",
+    "composition": "Large readable text, subtle motion, and a progress cue.",
+    "motion": "steady point reveal",
+    "textPriority": "support"
+  },
+  {
+    "sceneId": "takeaway-2",
+    "shotType": "explain",
+    "composition": "Large readable text, subtle motion, and a progress cue.",
+    "motion": "steady point reveal",
+    "textPriority": "support"
+  },
+  {
+    "sceneId": "takeaway-3",
+    "shotType": "proof",
+    "composition": "Large readable text, subtle motion, and a progress cue.",
+    "motion": "proof card hold",
+    "textPriority": "support"
+  },
+  {
+    "sceneId": "close",
+    "shotType": "close",
+    "composition": "Final decision-oriented slate with a direct closing line.",
+    "motion": "calm final lockup",
+    "textPriority": "close"
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "brand": "Local Video Draft Machine",
+  "positioning": "A practical content operations system that proves draft-to-MP4 quality locally before publishing integrations are added.",
+  "voice": [
+    "clear",
+    "operator-minded",
+    "confident",
+    "specific"
+  ],
+  "theme": "Ops Green",
+  "colorTokens": {
+    "background": "152115",
+    "surface": "1f3a24",
+    "foreground": "f8fafc",
+    "muted": "d9f99d",
+    "accent": "a3e635",
+    "secondary": "38bdf8"
+  },
+  "typography": {
+    "font": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "title": "large, direct, high contrast",
+    "body": "short lines, scan-friendly, never paragraph-dense"
+  },
+  "composition": {
+    "aspectRatio": "9:16",
+    "safeArea": {
+      "top": 180,
+      "right": 120,
+      "bottom": 180,
+      "left": 120
+    },
+    "density": "single idea per scene"
+  },
+  "motion": {
+    "defaultTransitionSeconds": 0.35,
+    "sceneStyles": {
+      "hook": "fast title resolve, accent rail, early proof cue",
+      "explain": "steady copy reveal with progress bar",
+      "proof": "structured point card with status marker",
+      "close": "calm final slate with direct next action"
+    }
+  },
+  "audio": {
+    "placeholder": "Generated sine-tone guide track so MP4s are playable before final narration.",
+    "targetVoice": "measured, human, product-lead cadence",
+    "mixNotes": "Final publish audio should replace tones with voiceover and keep music below speech."
+  },
+  "captions": {
+    "style": "concise sidecar SRT plus large in-video text",
+    "maxLineChars": 38,
+    "maxLinesPerScene": 2
+  },
+  "designIntent": "Make builders moving from prototype automation to a repeatable content system understand Define the smallest pipeline that creates reviewable drafts and playable videos."
+}

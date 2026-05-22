@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-05-21T23:43:36.910Z",
+  "mode": "dry_run",
+  "entries": [
+    {
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "platform": "YouTube Shorts",
+      "status": "asset_ready_credentials_needed",
+      "qualityScore": 100,
+      "payload": "output/publish/why-local-rendering-changes-the-product-risk/youtube-shorts.publish.json"
+    },
+    {
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "platform": "TikTok",
+      "status": "asset_ready_credentials_needed",
+      "qualityScore": 100,
+      "payload": "output/publish/why-local-rendering-changes-the-product-risk/tiktok.publish.json"
+    },
+    {
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "platform": "LinkedIn",
+      "status": "asset_ready_credentials_needed",
+      "qualityScore": 100,
+      "payload": "output/publish/why-local-rendering-changes-the-product-risk/linkedin.publish.json"
+    },
+    {
+      "slug": "the-minimum-useful-video-factory",
+      "platform": "YouTube Shorts",
+      "status": "asset_ready_credentials_needed",
+      "qualityScore": 100,
+      "payload": "output/publish/the-minimum-useful-video-factory/youtube-shorts.publish.json"
+    },
+    {
+      "slug": "the-minimum-useful-video-factory",
+      "platform": "Instagram Reels",
+      "status": "asset_ready_credentials_needed",
+      "qualityScore": 100,
+      "payload": "output/publish/the-minimum-useful-video-factory/instagram-reels.publish.json"
+    }
+  ],
+  "nextIntegrationSteps": [
+    "Replace guide audio with final voiceover.",
+    "Add platform credentials as environment variables.",
+    "Implement platform upload clients behind the dry-run payload contract.",
+    "Record returned platform IDs in a publish ledger."
+  ]
+}

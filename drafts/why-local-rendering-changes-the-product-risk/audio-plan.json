@@ -1,0 +1,6 @@
+{
+  "guideTrack": "Generated sine-tone guide track so MP4s are playable before final narration.",
+  "finalVoice": "measured, human, product-lead cadence",
+  "mixNotes": "Final publish audio should replace tones with voiceover and keep music below speech.",
+  "scriptSource": "script.voiceover"
+}

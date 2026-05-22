@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-05-21T23:43:36.911Z",
+  "summary": {
+    "drafts": 2,
+    "renderedVideos": 2,
+    "averageQualityScore": 100,
+    "publishPayloads": 5,
+    "reviewBoard": "output/review/index.html"
+  },
+  "calendar": [
+    {
+      "date": "2026-05-21",
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "title": "Why Local Rendering Changes the Product Risk",
+      "platforms": [
+        "YouTube Shorts",
+        "TikTok",
+        "LinkedIn"
+      ],
+      "qualityScore": 100,
+      "status": "ready_for_final_voiceover"
+    },
+    {
+      "date": "2026-05-23",
+      "slug": "the-minimum-useful-video-factory",
+      "title": "The Minimum Useful Video Factory",
+      "platforms": [
+        "YouTube Shorts",
+        "Instagram Reels"
+      ],
+      "qualityScore": 100,
+      "status": "ready_for_final_voiceover"
+    }
+  ],
+  "risks": [
+    "Publishing remains dry-run until credentials and upload clients are implemented.",
+    "Audio is a generated guide track until final voiceover is recorded or synthesized.",
+    "Human review is still required before public distribution."
+  ]
+}

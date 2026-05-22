@@ -1,0 +1,19 @@
+{
+  "slug": "why-local-rendering-changes-the-product-risk",
+  "outputPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/why-local-rendering-changes-the-product-risk.mp4",
+  "bytes": 662153,
+  "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+  "thumbnailBytes": 250443,
+  "previewFramePath": "/Users/ishaanbhatt/Documents/New project 2/output/previews/why-local-rendering-changes-the-product-risk.png",
+  "previewFrameBytes": 250470,
+  "scenes": 5,
+  "durationSeconds": 36,
+  "designTheme": "Proof Blue",
+  "platforms": [
+    "YouTube Shorts",
+    "TikTok",
+    "LinkedIn"
+  ],
+  "renderedAt": "2026-05-21T23:43:32.975Z",
+  "ffmpegPath": "/Users/ishaanbhatt/Documents/New project 2/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg"
+}

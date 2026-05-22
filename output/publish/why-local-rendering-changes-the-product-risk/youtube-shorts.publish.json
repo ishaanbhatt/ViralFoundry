@@ -1,0 +1,26 @@
+{
+  "mode": "dry_run",
+  "platform": "YouTube Shorts",
+  "slug": "why-local-rendering-changes-the-product-risk",
+  "title": "Why Local Rendering Changes the Product Risk",
+  "caption": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.\n\nKey points:\n- Draft packages need enough structure to be reviewed without guesswork.\n- Rendering locally proves the creative system can produce actual assets.\n- Once MP4 quality is acceptable, distribution can be handled by platform integrations.\n\n#videopipeline #automation #contentops",
+  "videoPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/why-local-rendering-changes-the-product-risk.mp4",
+  "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+  "durationSeconds": 36,
+  "aspectRatio": "9:16",
+  "readiness": {
+    "qualityRecommendation": "approved_for_publish_prep",
+    "qualityScore": 100,
+    "status": "asset_ready_credentials_needed",
+    "blockers": [
+      "final_voiceover",
+      "brand_pack",
+      "platform_credentials"
+    ]
+  },
+  "integrationContract": {
+    "requiredCredential": "YOUTUBE-SHORTS_ACCESS_TOKEN",
+    "uploadEndpoint": "not_configured",
+    "idempotencyKey": "why-local-rendering-changes-the-product-risk-youtube-shorts"
+  }
+}

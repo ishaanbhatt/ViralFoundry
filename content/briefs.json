@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Why Local Rendering Changes the Product Risk",
+    "audience": "founders and product operators evaluating an automated video pipeline",
+    "objective": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.",
+    "takeaways": [
+      "Draft packages need enough structure to be reviewed without guesswork.",
+      "Rendering locally proves the creative system can produce actual assets.",
+      "Once MP4 quality is acceptable, distribution can be handled by platform integrations."
+    ],
+    "tone": "confident, practical, product-minded",
+    "platforms": ["YouTube Shorts", "TikTok", "LinkedIn"],
+    "durationSeconds": 36
+  },
+  {
+    "title": "The Minimum Useful Video Factory",
+    "audience": "builders moving from prototype automation to a repeatable content system",
+    "objective": "Define the smallest pipeline that creates reviewable drafts and playable videos.",
+    "takeaways": [
+      "A draft package should include script, storyboard, captions, metadata, and QA notes.",
+      "The render step should consume the package directly, not a separate hand-built file.",
+      "Validation should check both content completeness and MP4 existence."
+    ],
+    "tone": "clear, operational, slightly punchy",
+    "platforms": ["YouTube Shorts", "Instagram Reels"],
+    "durationSeconds": 42
+  }
+]

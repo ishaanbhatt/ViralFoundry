@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-05-21T23:43:36.908Z",
+  "count": 2,
+  "averageScore": 100,
+  "approvedCount": 2,
+  "reports": [
+    {
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "title": "Why Local Rendering Changes the Product Risk",
+      "score": 100,
+      "recommendation": "approved_for_publish_prep"
+    },
+    {
+      "slug": "the-minimum-useful-video-factory",
+      "title": "The Minimum Useful Video Factory",
+      "score": 100,
+      "recommendation": "approved_for_publish_prep"
+    }
+  ]
+}

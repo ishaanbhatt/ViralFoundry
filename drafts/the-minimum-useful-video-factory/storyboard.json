@@ -1,0 +1,127 @@
+[
+  {
+    "id": "hook",
+    "durationSeconds": 8,
+    "layout": "hook",
+    "title": "The Minimum Useful Video Factory",
+    "body": "Define the smallest pipeline that creates reviewable drafts and playable videos.",
+    "visualDirection": "Bold title slate with a clear product-risk framing.",
+    "motionCue": "fast title resolve",
+    "caption": "Define the smallest pipeline that creates reviewable drafts and playable videos.",
+    "sceneNumber": 1,
+    "layoutSpec": {
+      "titleSize": 76,
+      "bodySize": 44,
+      "titleY": "h*0.18",
+      "bodyY": "h*0.44"
+    },
+    "palette": {
+      "background": "152115",
+      "surface": "1f3a24",
+      "foreground": "f8fafc",
+      "muted": "d9f99d",
+      "accent": "a3e635",
+      "secondary": "38bdf8"
+    }
+  },
+  {
+    "id": "takeaway-1",
+    "durationSeconds": 8,
+    "layout": "explain",
+    "title": "Point 1",
+    "body": "A draft package should include script, storyboard, captions, metadata, and QA notes.",
+    "visualDirection": "Large readable text, subtle motion, and a progress cue.",
+    "motionCue": "steady point reveal",
+    "caption": "A draft package should include script, storyboard, captions, metadata, and QA notes.",
+    "sceneNumber": 2,
+    "layoutSpec": {
+      "titleSize": 58,
+      "bodySize": 46,
+      "titleY": "h*0.18",
+      "bodyY": "h*0.38"
+    },
+    "palette": {
+      "background": "152115",
+      "surface": "1f3a24",
+      "foreground": "f8fafc",
+      "muted": "d9f99d",
+      "accent": "a3e635",
+      "secondary": "38bdf8"
+    }
+  },
+  {
+    "id": "takeaway-2",
+    "durationSeconds": 8,
+    "layout": "explain",
+    "title": "Point 2",
+    "body": "The render step should consume the package directly, not a separate hand-built file.",
+    "visualDirection": "Large readable text, subtle motion, and a progress cue.",
+    "motionCue": "steady point reveal",
+    "caption": "The render step should consume the package directly, not a separate hand-built file.",
+    "sceneNumber": 3,
+    "layoutSpec": {
+      "titleSize": 58,
+      "bodySize": 46,
+      "titleY": "h*0.18",
+      "bodyY": "h*0.38"
+    },
+    "palette": {
+      "background": "152115",
+      "surface": "1f3a24",
+      "foreground": "f8fafc",
+      "muted": "d9f99d",
+      "accent": "a3e635",
+      "secondary": "38bdf8"
+    }
+  },
+  {
+    "id": "takeaway-3",
+    "durationSeconds": 8,
+    "layout": "proof",
+    "title": "Point 3",
+    "body": "Validation should check both content completeness and MP4 existence.",
+    "visualDirection": "Large readable text, subtle motion, and a progress cue.",
+    "motionCue": "proof card hold",
+    "caption": "Validation should check both content completeness and MP4 existence.",
+    "sceneNumber": 4,
+    "layoutSpec": {
+      "titleSize": 56,
+      "bodySize": 42,
+      "titleY": "h*0.20",
+      "bodyY": "h*0.41"
+    },
+    "palette": {
+      "background": "152115",
+      "surface": "1f3a24",
+      "foreground": "f8fafc",
+      "muted": "d9f99d",
+      "accent": "a3e635",
+      "secondary": "38bdf8"
+    }
+  },
+  {
+    "id": "close",
+    "durationSeconds": 10,
+    "layout": "close",
+    "title": "What this unlocks",
+    "body": "When the MP4 is real, publishing is just the next integration layer.",
+    "visualDirection": "Final decision-oriented slate with a direct closing line.",
+    "motionCue": "calm final lockup",
+    "caption": "When the MP4 is real, publishing is just the next integration layer.",
+    "sceneNumber": 5,
+    "layoutSpec": {
+      "titleSize": 64,
+      "bodySize": 46,
+      "titleY": "h*0.22",
+      "bodyY": "h*0.44"
+    },
+    "palette": {
+      "background": "152115",
+      "surface": "1f3a24",
+      "foreground": "f8fafc",
+      "muted": "d9f99d",
+      "accent": "a3e635",
+      "secondary": "38bdf8"
+    }
+  }
+]

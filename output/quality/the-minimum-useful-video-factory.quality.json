@@ -1,0 +1,64 @@
+{
+  "slug": "the-minimum-useful-video-factory",
+  "title": "The Minimum Useful Video Factory",
+  "score": 100,
+  "recommendation": "approved_for_publish_prep",
+  "gates": [
+    {
+      "id": "creative_complete",
+      "passed": true,
+      "weight": 18,
+      "points": 18,
+      "note": "Creative brief and script are complete."
+    },
+    {
+      "id": "storyboard_timed",
+      "passed": true,
+      "weight": 14,
+      "points": 14,
+      "note": "Storyboard has timed scenes with usable durations."
+    },
+    {
+      "id": "design_covered",
+      "passed": true,
+      "weight": 16,
+      "points": 16,
+      "note": "Visual, motion, and shot-list decisions are represented."
+    },
+    {
+      "id": "platform_variants",
+      "passed": true,
+      "weight": 12,
+      "points": 12,
+      "note": "Platform variants are present and vertical-first."
+    },
+    {
+      "id": "caption_ready",
+      "passed": true,
+      "weight": 12,
+      "points": 12,
+      "note": "Captions and sidecar SRT are ready."
+    },
+    {
+      "id": "render_ready",
+      "passed": true,
+      "weight": 18,
+      "points": 18,
+      "note": "MP4, thumbnail, and preview frame exist."
+    },
+    {
+      "id": "publish_boundaries",
+      "passed": true,
+      "weight": 10,
+      "points": 10,
+      "note": "Publish blockers are explicit."
+    }
+  ],
+  "reviewedAssets": {
+    "package": "drafts/the-minimum-useful-video-factory/package.json",
+    "video": "output/videos/the-minimum-useful-video-factory.mp4",
+    "thumbnail": "output/thumbnails/the-minimum-useful-video-factory.png",
+    "previewFrame": "output/previews/the-minimum-useful-video-factory.png"
+  },
+  "generatedAt": "2026-05-21T23:43:36.907Z"
+}

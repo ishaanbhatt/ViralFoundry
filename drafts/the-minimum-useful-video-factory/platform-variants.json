@@ -1,0 +1,18 @@
+[
+  {
+    "platform": "YouTube Shorts",
+    "aspectRatio": "9:16",
+    "maxDurationSeconds": 60,
+    "title": "The Minimum Useful Video Factory",
+    "captionStyle": "searchable title with direct learning promise",
+    "publishReadiness": "asset-ready, credentials-needed"
+  },
+  {
+    "platform": "Instagram Reels",
+    "aspectRatio": "9:16",
+    "maxDurationSeconds": 90,
+    "title": "The Minimum Useful Video Factory",
+    "captionStyle": "clean description with 3-5 targeted tags",
+    "publishReadiness": "asset-ready, credentials-needed"
+  }
+]

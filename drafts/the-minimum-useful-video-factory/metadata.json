@@ -1,0 +1,14 @@
+{
+  "title": "The Minimum Useful Video Factory",
+  "description": "Define the smallest pipeline that creates reviewable drafts and playable videos.\n\nKey points:\n- A draft package should include script, storyboard, captions, metadata, and QA notes.\n- The render step should consume the package directly, not a separate hand-built file.\n- Validation should check both content completeness and MP4 existence.",
+  "platforms": [
+    "YouTube Shorts",
+    "Instagram Reels"
+  ],
+  "hashtags": [
+    "#videopipeline",
+    "#automation",
+    "#contentops"
+  ],
+  "status": "draft"
+}

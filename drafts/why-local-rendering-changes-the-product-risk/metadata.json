@@ -1,0 +1,15 @@
+{
+  "title": "Why Local Rendering Changes the Product Risk",
+  "description": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.\n\nKey points:\n- Draft packages need enough structure to be reviewed without guesswork.\n- Rendering locally proves the creative system can produce actual assets.\n- Once MP4 quality is acceptable, distribution can be handled by platform integrations.",
+  "platforms": [
+    "YouTube Shorts",
+    "TikTok",
+    "LinkedIn"
+  ],
+  "hashtags": [
+    "#videopipeline",
+    "#automation",
+    "#contentops"
+  ],
+  "status": "draft"
+}

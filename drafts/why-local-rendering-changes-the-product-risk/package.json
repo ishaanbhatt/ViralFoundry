@@ -1,0 +1,411 @@
+{
+  "slug": "why-local-rendering-changes-the-product-risk",
+  "creativeBrief": {
+    "title": "Why Local Rendering Changes the Product Risk",
+    "audience": "founders and product operators evaluating an automated video pipeline",
+    "objective": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.",
+    "tone": "confident, practical, product-minded",
+    "platforms": [
+      "YouTube Shorts",
+      "TikTok",
+      "LinkedIn"
+    ],
+    "durationSeconds": 36
+  },
+  "script": {
+    "voiceover": "Why Local Rendering Changes the Product Risk. Show that local MP4 generation turns publishing into an integration problem instead of a product problem.\n\nPoint 1. Draft packages need enough structure to be reviewed without guesswork.\n\nPoint 2. Rendering locally proves the creative system can produce actual assets.\n\nPoint 3. Once MP4 quality is acceptable, distribution can be handled by platform integrations.\n\nWhat this unlocks. When the MP4 is real, publishing is just the next integration layer.",
+    "onScreenText": [
+      {
+        "sceneId": "hook",
+        "title": "Why Local Rendering Changes the Product Risk",
+        "body": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem."
+      },
+      {
+        "sceneId": "takeaway-1",
+        "title": "Point 1",
+        "body": "Draft packages need enough structure to be reviewed without guesswork."
+      },
+      {
+        "sceneId": "takeaway-2",
+        "title": "Point 2",
+        "body": "Rendering locally proves the creative system can produce actual assets."
+      },
+      {
+        "sceneId": "takeaway-3",
+        "title": "Point 3",
+        "body": "Once MP4 quality is acceptable, distribution can be handled by platform integrations."
+      },
+      {
+        "sceneId": "close",
+        "title": "What this unlocks",
+        "body": "When the MP4 is real, publishing is just the next integration layer."
+      }
+    ]
+  },
+  "designBrief": {
+    "brand": "Local Video Draft Machine",
+    "positioning": "A practical content operations system that proves draft-to-MP4 quality locally before publishing integrations are added.",
+    "voice": [
+      "clear",
+      "operator-minded",
+      "confident",
+      "specific"
+    ],
+    "theme": "Proof Blue",
+    "colorTokens": {
+      "background": "0f172a",
+      "surface": "172554",
+      "foreground": "f8fafc",
+      "muted": "cbd5e1",
+      "accent": "38bdf8",
+      "secondary": "f97316"
+    },
+    "typography": {
+      "font": "/System/Library/Fonts/Supplemental/Arial.ttf",
+      "title": "large, direct, high contrast",
+      "body": "short lines, scan-friendly, never paragraph-dense"
+    },
+    "composition": {
+      "aspectRatio": "9:16",
+      "safeArea": {
+        "top": 180,
+        "right": 120,
+        "bottom": 180,
+        "left": 120
+      },
+      "density": "single idea per scene"
+    },
+    "motion": {
+      "defaultTransitionSeconds": 0.35,
+      "sceneStyles": {
+        "hook": "fast title resolve, accent rail, early proof cue",
+        "explain": "steady copy reveal with progress bar",
+        "proof": "structured point card with status marker",
+        "close": "calm final slate with direct next action"
+      }
+    },
+    "audio": {
+      "placeholder": "Generated sine-tone guide track so MP4s are playable before final narration.",
+      "targetVoice": "measured, human, product-lead cadence",
+      "mixNotes": "Final publish audio should replace tones with voiceover and keep music below speech."
+    },
+    "captions": {
+      "style": "concise sidecar SRT plus large in-video text",
+      "maxLineChars": 38,
+      "maxLinesPerScene": 2
+    },
+    "designIntent": "Make founders and product operators evaluating an automated video pipeline understand Show that local MP4 generation turns publishing into an integration problem instead of a product problem."
+  },
+  "platformVariants": [
+    {
+      "platform": "YouTube Shorts",
+      "aspectRatio": "9:16",
+      "maxDurationSeconds": 60,
+      "title": "Why Local Rendering Changes the Product Risk",
+      "captionStyle": "searchable title with direct learning promise",
+      "publishReadiness": "asset-ready, credentials-needed"
+    },
+    {
+      "platform": "TikTok",
+      "aspectRatio": "9:16",
+      "maxDurationSeconds": 60,
+      "title": "Why Local Rendering Changes the Product Risk",
+      "captionStyle": "hook-first caption with practical payoff",
+      "publishReadiness": "asset-ready, credentials-needed"
+    },
+    {
+      "platform": "LinkedIn",
+      "aspectRatio": "9:16",
+      "maxDurationSeconds": 90,
+      "title": "Why Local Rendering Changes the Product Risk",
+      "captionStyle": "operator insight with concrete takeaway",
+      "publishReadiness": "asset-ready, credentials-needed"
+    }
+  ],
+  "storyboard": [
+    {
+      "id": "hook",
+      "durationSeconds": 7,
+      "layout": "hook",
+      "title": "Why Local Rendering Changes the Product Risk",
+      "body": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.",
+      "visualDirection": "Bold title slate with a clear product-risk framing.",
+      "motionCue": "fast title resolve",
+      "caption": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.",
+      "sceneNumber": 1,
+      "layoutSpec": {
+        "titleSize": 76,
+        "bodySize": 44,
+        "titleY": "h*0.18",
+        "bodyY": "h*0.44"
+      },
+      "palette": {
+        "background": "0f172a",
+        "surface": "172554",
+        "foreground": "f8fafc",
+        "muted": "cbd5e1",
+        "accent": "38bdf8",
+        "secondary": "f97316"
+      }
+    },
+    {
+      "id": "takeaway-1",
+      "durationSeconds": 7,
+      "layout": "explain",
+      "title": "Point 1",
+      "body": "Draft packages need enough structure to be reviewed without guesswork.",
+      "visualDirection": "Large readable text, subtle motion, and a progress cue.",
+      "motionCue": "steady point reveal",
+      "caption": "Draft packages need enough structure to be reviewed without guesswork.",
+      "sceneNumber": 2,
+      "layoutSpec": {
+        "titleSize": 58,
+        "bodySize": 46,
+        "titleY": "h*0.18",
+        "bodyY": "h*0.38"
+      },
+      "palette": {
+        "background": "0f172a",
+        "surface": "172554",
+        "foreground": "f8fafc",
+        "muted": "cbd5e1",
+        "accent": "38bdf8",
+        "secondary": "f97316"
+      }
+    },
+    {
+      "id": "takeaway-2",
+      "durationSeconds": 7,
+      "layout": "explain",
+      "title": "Point 2",
+      "body": "Rendering locally proves the creative system can produce actual assets.",
+      "visualDirection": "Large readable text, subtle motion, and a progress cue.",
+      "motionCue": "steady point reveal",
+      "caption": "Rendering locally proves the creative system can produce actual assets.",
+      "sceneNumber": 3,
+      "layoutSpec": {
+        "titleSize": 58,
+        "bodySize": 46,
+        "titleY": "h*0.18",
+        "bodyY": "h*0.38"
+      },
+      "palette": {
+        "background": "0f172a",
+        "surface": "172554",
+        "foreground": "f8fafc",
+        "muted": "cbd5e1",
+        "accent": "38bdf8",
+        "secondary": "f97316"
+      }
+    },
+    {
+      "id": "takeaway-3",
+      "durationSeconds": 7,
+      "layout": "proof",
+      "title": "Point 3",
+      "body": "Once MP4 quality is acceptable, distribution can be handled by platform integrations.",
+      "visualDirection": "Large readable text, subtle motion, and a progress cue.",
+      "motionCue": "proof card hold",
+      "caption": "Once MP4 quality is acceptable, distribution can be handled by platform integrations.",
+      "sceneNumber": 4,
+      "layoutSpec": {
+        "titleSize": 56,
+        "bodySize": 42,
+        "titleY": "h*0.20",
+        "bodyY": "h*0.41"
+      },
+      "palette": {
+        "background": "0f172a",
+        "surface": "172554",
+        "foreground": "f8fafc",
+        "muted": "cbd5e1",
+        "accent": "38bdf8",
+        "secondary": "f97316"
+      }
+    },
+    {
+      "id": "close",
+      "durationSeconds": 8,
+      "layout": "close",
+      "title": "What this unlocks",
+      "body": "When the MP4 is real, publishing is just the next integration layer.",
+      "visualDirection": "Final decision-oriented slate with a direct closing line.",
+      "motionCue": "calm final lockup",
+      "caption": "When the MP4 is real, publishing is just the next integration layer.",
+      "sceneNumber": 5,
+      "layoutSpec": {
+        "titleSize": 64,
+        "bodySize": 46,
+        "titleY": "h*0.22",
+        "bodyY": "h*0.44"
+      },
+      "palette": {
+        "background": "0f172a",
+        "surface": "172554",
+        "foreground": "f8fafc",
+        "muted": "cbd5e1",
+        "accent": "38bdf8",
+        "secondary": "f97316"
+      }
+    }
+  ],
+  "shotList": [
+    {
+      "sceneId": "hook",
+      "shotType": "hook",
+      "composition": "Bold title slate with a clear product-risk framing.",
+      "motion": "fast title resolve",
+      "textPriority": "hook"
+    },
+    {
+      "sceneId": "takeaway-1",
+      "shotType": "explain",
+      "composition": "Large readable text, subtle motion, and a progress cue.",
+      "motion": "steady point reveal",
+      "textPriority": "support"
+    },
+    {
+      "sceneId": "takeaway-2",
+      "shotType": "explain",
+      "composition": "Large readable text, subtle motion, and a progress cue.",
+      "motion": "steady point reveal",
+      "textPriority": "support"
+    },
+    {
+      "sceneId": "takeaway-3",
+      "shotType": "proof",
+      "composition": "Large readable text, subtle motion, and a progress cue.",
+      "motion": "proof card hold",
+      "textPriority": "support"
+    },
+    {
+      "sceneId": "close",
+      "shotType": "close",
+      "composition": "Final decision-oriented slate with a direct closing line.",
+      "motion": "calm final lockup",
+      "textPriority": "close"
+    }
+  ],
+  "motionPlan": [
+    {
+      "sceneId": "hook",
+      "cue": "fast title resolve",
+      "transitionSeconds": 0.35,
+      "style": "fast title resolve, accent rail, early proof cue"
+    },
+    {
+      "sceneId": "takeaway-1",
+      "cue": "steady point reveal",
+      "transitionSeconds": 0.35,
+      "style": "steady copy reveal with progress bar"
+    },
+    {
+      "sceneId": "takeaway-2",
+      "cue": "steady point reveal",
+      "transitionSeconds": 0.35,
+      "style": "steady copy reveal with progress bar"
+    },
+    {
+      "sceneId": "takeaway-3",
+      "cue": "proof card hold",
+      "transitionSeconds": 0.35,
+      "style": "structured point card with status marker"
+    },
+    {
+      "sceneId": "close",
+      "cue": "calm final lockup",
+      "transitionSeconds": 0.35,
+      "style": "calm final slate with direct next action"
+    }
+  ],
+  "audioPlan": {
+    "guideTrack": "Generated sine-tone guide track so MP4s are playable before final narration.",
+    "finalVoice": "measured, human, product-lead cadence",
+    "mixNotes": "Final publish audio should replace tones with voiceover and keep music below speech.",
+    "scriptSource": "script.voiceover"
+  },
+  "captions": [
+    {
+      "sceneId": "hook",
+      "text": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.",
+      "durationSeconds": 7
+    },
+    {
+      "sceneId": "takeaway-1",
+      "text": "Draft packages need enough structure to be reviewed without guesswork.",
+      "durationSeconds": 7
+    },
+    {
+      "sceneId": "takeaway-2",
+      "text": "Rendering locally proves the creative system can produce actual assets.",
+      "durationSeconds": 7
+    },
+    {
+      "sceneId": "takeaway-3",
+      "text": "Once MP4 quality is acceptable, distribution can be handled by platform integrations.",
+      "durationSeconds": 7
+    },
+    {
+      "sceneId": "close",
+      "text": "When the MP4 is real, publishing is just the next integration layer.",
+      "durationSeconds": 8
+    }
+  ],
+  "srt": "1\n00:00:00,000 --> 00:00:07,000\nShow that local MP4 generation turns publishing into an integration problem instead of a product problem.\n\n2\n00:00:07,000 --> 00:00:14,000\nDraft packages need enough structure to be reviewed without guesswork.\n\n3\n00:00:14,000 --> 00:00:21,000\nRendering locally proves the creative system can produce actual assets.\n\n4\n00:00:21,000 --> 00:00:28,000\nOnce MP4 quality is acceptable, distribution can be handled by platform integrations.\n\n5\n00:00:28,000 --> 00:00:36,000\nWhen the MP4 is real, publishing is just the next integration layer.\n",
+  "metadata": {
+    "title": "Why Local Rendering Changes the Product Risk",
+    "description": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.\n\nKey points:\n- Draft packages need enough structure to be reviewed without guesswork.\n- Rendering locally proves the creative system can produce actual assets.\n- Once MP4 quality is acceptable, distribution can be handled by platform integrations.",
+    "platforms": [
+      "YouTube Shorts",
+      "TikTok",
+      "LinkedIn"
+    ],
+    "hashtags": [
+      "#videopipeline",
+      "#automation",
+      "#contentops"
+    ],
+    "status": "draft"
+  },
+  "assets": {
+    "required": [
+      "design_system",
+      "font",
+      "voiceover_placeholder",
+      "platform_profiles"
+    ],
+    "generated": [
+      "animated_text_slates",
+      "guide_audio_bed",
+      "thumbnail",
+      "preview_frame",
+      "sidecar_captions"
+    ],
+    "missingForPublish": [
+      "final_voiceover",
+      "brand_pack",
+      "platform_credentials"
+    ]
+  },
+  "qaChecklist": [
+    "Script has a hook, supporting points, and close.",
+    "Storyboard contains one or more timed scenes.",
+    "Captions are present for each scene.",
+    "Metadata includes platform targets.",
+    "Design brief covers visual, motion, audio, caption, and platform decisions.",
+    "Renderer can create a local MP4, thumbnail, and preview frame from this package."
+  ],
+  "renderPlan": {
+    "size": {
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "output": "output/videos/why-local-rendering-changes-the-product-risk.mp4",
+    "thumbnail": "output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+    "previewFrame": "output/previews/why-local-rendering-changes-the-product-risk.png",
+    "format": "mp4",
+    "renderStyle": "vertical text-led motion slates",
+    "designSource": "package.designBrief"
+  }
+}

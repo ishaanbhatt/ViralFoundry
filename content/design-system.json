@@ -1,0 +1,122 @@
+{
+  "brand": {
+    "name": "Local Video Draft Machine",
+    "positioning": "A practical content operations system that proves draft-to-MP4 quality locally before publishing integrations are added.",
+    "voice": ["clear", "operator-minded", "confident", "specific"]
+  },
+  "visual": {
+    "font": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "safeArea": {
+      "top": 180,
+      "right": 120,
+      "bottom": 180,
+      "left": 120
+    },
+    "themes": [
+      {
+        "name": "Proof Blue",
+        "background": "0f172a",
+        "surface": "172554",
+        "foreground": "f8fafc",
+        "muted": "cbd5e1",
+        "accent": "38bdf8",
+        "secondary": "f97316"
+      },
+      {
+        "name": "Ops Green",
+        "background": "152115",
+        "surface": "1f3a24",
+        "foreground": "f8fafc",
+        "muted": "d9f99d",
+        "accent": "a3e635",
+        "secondary": "38bdf8"
+      },
+      {
+        "name": "Signal Coral",
+        "background": "231417",
+        "surface": "431f24",
+        "foreground": "fff7ed",
+        "muted": "fed7aa",
+        "accent": "fb7185",
+        "secondary": "facc15"
+      }
+    ],
+    "layouts": {
+      "hook": {
+        "titleSize": 76,
+        "bodySize": 44,
+        "titleY": "h*0.18",
+        "bodyY": "h*0.44"
+      },
+      "explain": {
+        "titleSize": 58,
+        "bodySize": 46,
+        "titleY": "h*0.18",
+        "bodyY": "h*0.38"
+      },
+      "proof": {
+        "titleSize": 56,
+        "bodySize": 42,
+        "titleY": "h*0.20",
+        "bodyY": "h*0.41"
+      },
+      "close": {
+        "titleSize": 64,
+        "bodySize": 46,
+        "titleY": "h*0.22",
+        "bodyY": "h*0.44"
+      }
+    }
+  },
+  "motion": {
+    "defaultTransitionSeconds": 0.35,
+    "sceneStyles": {
+      "hook": "fast title resolve, accent rail, early proof cue",
+      "explain": "steady copy reveal with progress bar",
+      "proof": "structured point card with status marker",
+      "close": "calm final slate with direct next action"
+    }
+  },
+  "audio": {
+    "placeholder": "Generated sine-tone guide track so MP4s are playable before final narration.",
+    "targetVoice": "measured, human, product-lead cadence",
+    "mixNotes": "Final publish audio should replace tones with voiceover and keep music below speech."
+  },
+  "captions": {
+    "style": "concise sidecar SRT plus large in-video text",
+    "maxLineChars": 38,
+    "maxLinesPerScene": 2
+  },
+  "platforms": {
+    "YouTube Shorts": {
+      "aspectRatio": "9:16",
+      "maxDurationSeconds": 60,
+      "titleMaxChars": 100,
+      "captionStyle": "searchable title with direct learning promise"
+    },
+    "TikTok": {
+      "aspectRatio": "9:16",
+      "maxDurationSeconds": 60,
+      "titleMaxChars": 80,
+      "captionStyle": "hook-first caption with practical payoff"
+    },
+    "Instagram Reels": {
+      "aspectRatio": "9:16",
+      "maxDurationSeconds": 90,
+      "titleMaxChars": 80,
+      "captionStyle": "clean description with 3-5 targeted tags"
+    },
+    "LinkedIn": {
+      "aspectRatio": "9:16",
+      "maxDurationSeconds": 90,
+      "titleMaxChars": 120,
+      "captionStyle": "operator insight with concrete takeaway"
+    }
+  },
+  "qualityBar": [
+    "Every package can be reviewed without opening source code.",
+    "Every package includes visual, motion, audio, caption, metadata, and platform decisions.",
+    "Every generated MP4 is playable locally and tied back to its package manifest.",
+    "Every generated video has a thumbnail, preview frame, and review-board entry."
+  ]
+}

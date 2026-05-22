@@ -1,0 +1,13 @@
+{
+  "size": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "output": "output/videos/why-local-rendering-changes-the-product-risk.mp4",
+  "thumbnail": "output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+  "previewFrame": "output/previews/why-local-rendering-changes-the-product-risk.png",
+  "format": "mp4",
+  "renderStyle": "vertical text-led motion slates",
+  "designSource": "package.designBrief"
+}

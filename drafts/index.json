@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-05-21T23:43:29.477Z",
+  "count": 2,
+  "packages": [
+    {
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "title": "Why Local Rendering Changes the Product Risk",
+      "durationSeconds": 36,
+      "renderOutput": "output/videos/why-local-rendering-changes-the-product-risk.mp4"
+    },
+    {
+      "slug": "the-minimum-useful-video-factory",
+      "title": "The Minimum Useful Video Factory",
+      "durationSeconds": 42,
+      "renderOutput": "output/videos/the-minimum-useful-video-factory.mp4"
+    }
+  ]
+}

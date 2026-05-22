@@ -1,0 +1,18 @@
+{
+  "slug": "the-minimum-useful-video-factory",
+  "outputPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/the-minimum-useful-video-factory.mp4",
+  "bytes": 730537,
+  "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/the-minimum-useful-video-factory.png",
+  "thumbnailBytes": 170453,
+  "previewFramePath": "/Users/ishaanbhatt/Documents/New project 2/output/previews/the-minimum-useful-video-factory.png",
+  "previewFrameBytes": 170453,
+  "scenes": 5,
+  "durationSeconds": 42,
+  "designTheme": "Ops Green",
+  "platforms": [
+    "YouTube Shorts",
+    "Instagram Reels"
+  ],
+  "renderedAt": "2026-05-21T23:43:36.904Z",
+  "ffmpegPath": "/Users/ishaanbhatt/Documents/New project 2/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg"
+}

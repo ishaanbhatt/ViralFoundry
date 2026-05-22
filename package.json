@@ -1,0 +1,24 @@
+{
+  "name": "local-video-draft-machine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Generate complete draft packages and render local MP4 videos from them.",
+  "scripts": {
+    "generate": "node src/generate-drafts.js",
+    "render": "node src/render-videos.js",
+    "review": "node src/generate-review.js",
+    "quality": "node src/score-quality.js",
+    "publish:prepare": "node src/prepare-publish.js",
+    "operations": "node src/generate-operations.js",
+    "build": "node src/build-all.js",
+    "full": "node src/full-pipeline.js && node src/validate-output.js",
+    "validate": "node src/validate-output.js"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

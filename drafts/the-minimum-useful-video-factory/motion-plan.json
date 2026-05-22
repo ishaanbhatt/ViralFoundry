@@ -1,0 +1,32 @@
+[
+  {
+    "sceneId": "hook",
+    "cue": "fast title resolve",
+    "transitionSeconds": 0.35,
+    "style": "fast title resolve, accent rail, early proof cue"
+  },
+  {
+    "sceneId": "takeaway-1",
+    "cue": "steady point reveal",
+    "transitionSeconds": 0.35,
+    "style": "steady copy reveal with progress bar"
+  },
+  {
+    "sceneId": "takeaway-2",
+    "cue": "steady point reveal",
+    "transitionSeconds": 0.35,
+    "style": "steady copy reveal with progress bar"
+  },
+  {
+    "sceneId": "takeaway-3",
+    "cue": "proof card hold",
+    "transitionSeconds": 0.35,
+    "style": "structured point card with status marker"
+  },
+  {
+    "sceneId": "close",
+    "cue": "calm final lockup",
+    "transitionSeconds": 0.35,
+    "style": "calm final slate with direct next action"
+  }
+]
