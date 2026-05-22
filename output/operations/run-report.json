@@ -1,15 +1,17 @@
 {
-  "generatedAt": "2026-05-21T23:43:36.911Z",
+  "generatedAt": "2026-05-22T05:44:08.939Z",
   "summary": {
     "drafts": 2,
     "renderedVideos": 2,
     "averageQualityScore": 100,
+    "providerJobs": 2,
+    "providerMode": "dry_run",
     "publishPayloads": 5,
     "reviewBoard": "output/review/index.html"
   },
   "calendar": [
     {
-      "date": "2026-05-21",
+      "date": "2026-05-22",
       "slug": "why-local-rendering-changes-the-product-risk",
       "title": "Why Local Rendering Changes the Product Risk",
       "platforms": [
@@ -21,7 +23,7 @@
       "status": "ready_for_final_voiceover"
     },
     {
-      "date": "2026-05-23",
+      "date": "2026-05-24",
       "slug": "the-minimum-useful-video-factory",
       "title": "The Minimum Useful Video Factory",
       "platforms": [
@@ -33,6 +35,7 @@
     }
   ],
   "risks": [
+    "Provider jobs are contract-only dry runs until credentials, polling, storage, and cost ledgers exist.",
     "Publishing remains dry-run until credentials and upload clients are implemented.",
     "Audio is a generated guide track until final voiceover is recorded or synthesized.",
     "Human review is still required before public distribution."

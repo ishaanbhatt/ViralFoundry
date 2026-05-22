@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-05-22T05:44:08.936Z",
+  "slug": "the-minimum-useful-video-factory",
+  "title": "The Minimum Useful Video Factory",
+  "provider": {
+    "id": "dry-run-video-provider",
+    "mode": "dry_run",
+    "displayName": "Dry Run Video Provider",
+    "capabilities": [
+      "text_to_video",
+      "image_reference",
+      "caption_reference",
+      "local_render_fallback"
+    ]
+  },
+  "request": {
+    "provider": "dry-run-video-provider",
+    "mode": "dry_run",
+    "slug": "the-minimum-useful-video-factory",
+    "title": "The Minimum Useful Video Factory",
+    "objective": "Define the smallest pipeline that creates reviewable drafts and playable videos.",
+    "durationSeconds": 42,
+    "aspectRatios": [
+      "9:16"
+    ],
+    "prompt": {
+      "voiceover": "The Minimum Useful Video Factory. Define the smallest pipeline that creates reviewable drafts and playable videos.\n\nPoint 1. A draft package should include script, storyboard, captions, metadata, and QA notes.\n\nPoint 2. The render step should consume the package directly, not a separate hand-built file.\n\nPoint 3. Validation should check both content completeness and MP4 existence.\n\nWhat this unlocks. When the MP4 is real, publishing is just the next integration layer.",
+      "visualDirection": [
+        {
+          "sceneId": "hook",
+          "durationSeconds": 8,
+          "title": "The Minimum Useful Video Factory",
+          "body": "Define the smallest pipeline that creates reviewable drafts and playable videos.",
+          "motionCue": "fast title resolve",
+          "visualDirection": "Bold title slate with a clear product-risk framing."
+        },
+        {
+          "sceneId": "takeaway-1",
+          "durationSeconds": 8,
+          "title": "Point 1",
+          "body": "A draft package should include script, storyboard, captions, metadata, and QA notes.",
+          "motionCue": "steady point reveal",
+          "visualDirection": "Large readable text, subtle motion, and a progress cue."
+        },
+        {
+          "sceneId": "takeaway-2",
+          "durationSeconds": 8,
+          "title": "Point 2",
+          "body": "The render step should consume the package directly, not a separate hand-built file.",
+          "motionCue": "steady point reveal",
+          "visualDirection": "Large readable text, subtle motion, and a progress cue."
+        },
+        {
+          "sceneId": "takeaway-3",
+          "durationSeconds": 8,
+          "title": "Point 3",
+          "body": "Validation should check both content completeness and MP4 existence.",
+          "motionCue": "proof card hold",
+          "visualDirection": "Large readable text, subtle motion, and a progress cue."
+        },
+        {
+          "sceneId": "close",
+          "durationSeconds": 10,
+          "title": "What this unlocks",
+          "body": "When the MP4 is real, publishing is just the next integration layer.",
+          "motionCue": "calm final lockup",
+          "visualDirection": "Final decision-oriented slate with a direct closing line."
+        }
+      ],
+      "designTheme": "Ops Green",
+      "colorTokens": {
+        "background": "152115",
+        "surface": "1f3a24",
+        "foreground": "f8fafc",
+        "muted": "d9f99d",
+        "accent": "a3e635",
+        "secondary": "38bdf8"
+      },
+      "audioDirection": "measured, human, product-lead cadence"
+    },
+    "references": {
+      "localRender": "Users/ishaanbhatt/Documents/New project 2/output/videos/the-minimum-useful-video-factory.mp4",
+      "thumbnail": "Users/ishaanbhatt/Documents/New project 2/output/thumbnails/the-minimum-useful-video-factory.png",
+      "previewFrame": "Users/ishaanbhatt/Documents/New project 2/output/previews/the-minimum-useful-video-factory.png",
+      "captions": "drafts/the-minimum-useful-video-factory/captions.srt",
+      "package": "drafts/the-minimum-useful-video-factory/package.json"
+    },
+    "qualityGate": {
+      "score": 100,
+      "recommendation": "approved_for_publish_prep"
+    }
+  },
+  "response": {
+    "provider": "dry-run-video-provider",
+    "providerJobId": "dryrun_the-minimum-useful-video-factory",
+    "mode": "dry_run",
+    "status": "contract_ready",
+    "submitted": false,
+    "billable": false,
+    "cost": {
+      "estimatedUsd": 0,
+      "currency": "USD",
+      "billingStatus": "dry_run_not_billable"
+    },
+    "outputContract": {
+      "expectedVideoUrl": null,
+      "expectedStoragePath": "provider-output/the-minimum-useful-video-factory/final.mp4",
+      "expectedThumbnailUrl": null,
+      "callbackEvent": "video.render.completed"
+    },
+    "liveIntegrationRequirements": [
+      "provider_api_key",
+      "provider_job_status_polling",
+      "storage_bucket",
+      "callback_endpoint",
+      "usage_and_cost_ledger"
+    ],
+    "errors": []
+  },
+  "provenance": {
+    "renderSource": "local_render_fallback",
+    "packagePath": "drafts/the-minimum-useful-video-factory/package.json",
+    "localRenderPath": "Users/ishaanbhatt/Documents/New project 2/output/videos/the-minimum-useful-video-factory.mp4",
+    "qualityReportPath": "output/quality/the-minimum-useful-video-factory.quality.json"
+  }
+}

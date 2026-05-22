@@ -6,8 +6,14 @@
   "caption": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.\n\nKey points:\n- Draft packages need enough structure to be reviewed without guesswork.\n- Rendering locally proves the creative system can produce actual assets.\n- Once MP4 quality is acceptable, distribution can be handled by platform integrations.\n\n#videopipeline #automation #contentops",
   "videoPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/why-local-rendering-changes-the-product-risk.mp4",
   "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+  "providerJobPath": "output/provider-jobs/why-local-rendering-changes-the-product-risk.provider-job.json",
   "durationSeconds": 36,
   "aspectRatio": "9:16",
+  "assetProvenance": {
+    "renderSource": "local_render_fallback",
+    "providerMode": "dry_run",
+    "providerOutputReady": false
+  },
   "readiness": {
     "qualityRecommendation": "approved_for_publish_prep",
     "qualityScore": 100,

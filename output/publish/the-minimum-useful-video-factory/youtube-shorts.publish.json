@@ -6,8 +6,14 @@
   "caption": "Define the smallest pipeline that creates reviewable drafts and playable videos.\n\nKey points:\n- A draft package should include script, storyboard, captions, metadata, and QA notes.\n- The render step should consume the package directly, not a separate hand-built file.\n- Validation should check both content completeness and MP4 existence.\n\n#videopipeline #automation #contentops",
   "videoPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/the-minimum-useful-video-factory.mp4",
   "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/the-minimum-useful-video-factory.png",
+  "providerJobPath": "output/provider-jobs/the-minimum-useful-video-factory.provider-job.json",
   "durationSeconds": 42,
   "aspectRatio": "9:16",
+  "assetProvenance": {
+    "renderSource": "local_render_fallback",
+    "providerMode": "dry_run",
+    "providerOutputReady": false
+  },
   "readiness": {
     "qualityRecommendation": "approved_for_publish_prep",
     "qualityScore": 100,

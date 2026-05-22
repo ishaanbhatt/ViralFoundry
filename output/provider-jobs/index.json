@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-05-22T05:44:08.936Z",
+  "mode": "dry_run",
+  "provider": {
+    "id": "dry-run-video-provider",
+    "mode": "dry_run",
+    "displayName": "Dry Run Video Provider",
+    "capabilities": [
+      "text_to_video",
+      "image_reference",
+      "caption_reference",
+      "local_render_fallback"
+    ]
+  },
+  "count": 2,
+  "entries": [
+    {
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "title": "Why Local Rendering Changes the Product Risk",
+      "provider": "dry-run-video-provider",
+      "mode": "dry_run",
+      "status": "contract_ready",
+      "submitted": false,
+      "cost": {
+        "estimatedUsd": 0,
+        "currency": "USD",
+        "billingStatus": "dry_run_not_billable"
+      },
+      "jobPath": "output/provider-jobs/why-local-rendering-changes-the-product-risk.provider-job.json"
+    },
+    {
+      "slug": "the-minimum-useful-video-factory",
+      "title": "The Minimum Useful Video Factory",
+      "provider": "dry-run-video-provider",
+      "mode": "dry_run",
+      "status": "contract_ready",
+      "submitted": false,
+      "cost": {
+        "estimatedUsd": 0,
+        "currency": "USD",
+        "billingStatus": "dry_run_not_billable"
+      },
+      "jobPath": "output/provider-jobs/the-minimum-useful-video-factory.provider-job.json"
+    }
+  ],
+  "nextIntegrationSteps": [
+    "Choose the first live video provider and map its request fields to the dry-run contract.",
+    "Add credential loading without changing generated package structure.",
+    "Persist provider job IDs, status polling results, output URLs, errors, and final costs.",
+    "Keep local MP4s as the fallback render source until provider outputs pass review."
+  ]
+}

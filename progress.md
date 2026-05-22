@@ -34,12 +34,19 @@ Goal: keep building the local video draft machine until the major design aspects
 
 - [x] Generate a content calendar from the locally rendered package set.
 - [x] Generate an operations run report tying together drafts, renders, quality, review, and publish prep.
-- [x] Add a single full-pipeline command that runs build, quality, publish prep, operations, and validation.
+- [x] Add a single full-pipeline command that runs build, quality, provider contracts, publish prep, operations, and validation.
 
-## Phase 6: Product Documentation
+## Phase 6: Provider Abstraction
+
+- [x] Add a dry-run video provider adapter behind a provider-agnostic request and response contract.
+- [x] Generate one provider job contract per draft package without submitting paid API work.
+- [x] Preserve local MP4s as the fallback render source and record provider provenance.
+- [x] Extend validation and operations reporting to cover provider job artifacts.
+
+## Phase 7: Product Documentation
 
 - [x] Document the full local product workflow across draft, design, render, QA, review, publish prep, and operations.
-- [x] Document the next integration phases left after local MP4 production is proven.
+- [x] Document the provider contract phase and the next integration phases left after local MP4 production is proven.
 
 ## Current Validation Gates
 

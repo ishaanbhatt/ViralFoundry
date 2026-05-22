@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-05-22T05:44:08.936Z",
+  "slug": "why-local-rendering-changes-the-product-risk",
+  "title": "Why Local Rendering Changes the Product Risk",
+  "provider": {
+    "id": "dry-run-video-provider",
+    "mode": "dry_run",
+    "displayName": "Dry Run Video Provider",
+    "capabilities": [
+      "text_to_video",
+      "image_reference",
+      "caption_reference",
+      "local_render_fallback"
+    ]
+  },
+  "request": {
+    "provider": "dry-run-video-provider",
+    "mode": "dry_run",
+    "slug": "why-local-rendering-changes-the-product-risk",
+    "title": "Why Local Rendering Changes the Product Risk",
+    "objective": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.",
+    "durationSeconds": 36,
+    "aspectRatios": [
+      "9:16"
+    ],
+    "prompt": {
+      "voiceover": "Why Local Rendering Changes the Product Risk. Show that local MP4 generation turns publishing into an integration problem instead of a product problem.\n\nPoint 1. Draft packages need enough structure to be reviewed without guesswork.\n\nPoint 2. Rendering locally proves the creative system can produce actual assets.\n\nPoint 3. Once MP4 quality is acceptable, distribution can be handled by platform integrations.\n\nWhat this unlocks. When the MP4 is real, publishing is just the next integration layer.",
+      "visualDirection": [
+        {
+          "sceneId": "hook",
+          "durationSeconds": 7,
+          "title": "Why Local Rendering Changes the Product Risk",
+          "body": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.",
+          "motionCue": "fast title resolve",
+          "visualDirection": "Bold title slate with a clear product-risk framing."
+        },
+        {
+          "sceneId": "takeaway-1",
+          "durationSeconds": 7,
+          "title": "Point 1",
+          "body": "Draft packages need enough structure to be reviewed without guesswork.",
+          "motionCue": "steady point reveal",
+          "visualDirection": "Large readable text, subtle motion, and a progress cue."
+        },
+        {
+          "sceneId": "takeaway-2",
+          "durationSeconds": 7,
+          "title": "Point 2",
+          "body": "Rendering locally proves the creative system can produce actual assets.",
+          "motionCue": "steady point reveal",
+          "visualDirection": "Large readable text, subtle motion, and a progress cue."
+        },
+        {
+          "sceneId": "takeaway-3",
+          "durationSeconds": 7,
+          "title": "Point 3",
+          "body": "Once MP4 quality is acceptable, distribution can be handled by platform integrations.",
+          "motionCue": "proof card hold",
+          "visualDirection": "Large readable text, subtle motion, and a progress cue."
+        },
+        {
+          "sceneId": "close",
+          "durationSeconds": 8,
+          "title": "What this unlocks",
+          "body": "When the MP4 is real, publishing is just the next integration layer.",
+          "motionCue": "calm final lockup",
+          "visualDirection": "Final decision-oriented slate with a direct closing line."
+        }
+      ],
+      "designTheme": "Proof Blue",
+      "colorTokens": {
+        "background": "0f172a",
+        "surface": "172554",
+        "foreground": "f8fafc",
+        "muted": "cbd5e1",
+        "accent": "38bdf8",
+        "secondary": "f97316"
+      },
+      "audioDirection": "measured, human, product-lead cadence"
+    },
+    "references": {
+      "localRender": "Users/ishaanbhatt/Documents/New project 2/output/videos/why-local-rendering-changes-the-product-risk.mp4",
+      "thumbnail": "Users/ishaanbhatt/Documents/New project 2/output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+      "previewFrame": "Users/ishaanbhatt/Documents/New project 2/output/previews/why-local-rendering-changes-the-product-risk.png",
+      "captions": "drafts/why-local-rendering-changes-the-product-risk/captions.srt",
+      "package": "drafts/why-local-rendering-changes-the-product-risk/package.json"
+    },
+    "qualityGate": {
+      "score": 100,
+      "recommendation": "approved_for_publish_prep"
+    }
+  },
+  "response": {
+    "provider": "dry-run-video-provider",
+    "providerJobId": "dryrun_why-local-rendering-changes-the-product-risk",
+    "mode": "dry_run",
+    "status": "contract_ready",
+    "submitted": false,
+    "billable": false,
+    "cost": {
+      "estimatedUsd": 0,
+      "currency": "USD",
+      "billingStatus": "dry_run_not_billable"
+    },
+    "outputContract": {
+      "expectedVideoUrl": null,
+      "expectedStoragePath": "provider-output/why-local-rendering-changes-the-product-risk/final.mp4",
+      "expectedThumbnailUrl": null,
+      "callbackEvent": "video.render.completed"
+    },
+    "liveIntegrationRequirements": [
+      "provider_api_key",
+      "provider_job_status_polling",
+      "storage_bucket",
+      "callback_endpoint",
+      "usage_and_cost_ledger"
+    ],
+    "errors": []
+  },
+  "provenance": {
+    "renderSource": "local_render_fallback",
+    "packagePath": "drafts/why-local-rendering-changes-the-product-risk/package.json",
+    "localRenderPath": "Users/ishaanbhatt/Documents/New project 2/output/videos/why-local-rendering-changes-the-product-risk.mp4",
+    "qualityReportPath": "output/quality/why-local-rendering-changes-the-product-risk.quality.json"
+  }
+}

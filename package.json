@@ -9,6 +9,7 @@
     "render": "node src/render-videos.js",
     "review": "node src/generate-review.js",
     "quality": "node src/score-quality.js",
+    "providers": "node src/generate-provider-jobs.js",
     "publish:prepare": "node src/prepare-publish.js",
     "operations": "node src/generate-operations.js",
     "build": "node src/build-all.js",

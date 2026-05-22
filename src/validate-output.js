@@ -84,6 +84,12 @@ async function validatePackage(item) {
     `${item.slug}: publish payload count does not match platform variants`
   );
 
+  const providerJob = await readJson(fromRoot("output", "provider-jobs", `${item.slug}.provider-job.json`));
+  assert(providerJob.provider.mode === "dry_run", `${item.slug}: provider job must stay in dry-run mode`);
+  assert(providerJob.response.status === "contract_ready", `${item.slug}: provider job contract is not ready`);
+  assert(providerJob.response.submitted === false, `${item.slug}: dry-run provider job must not be submitted`);
+  assert(providerJob.provenance.renderSource === "local_render_fallback", `${item.slug}: provider provenance is unclear`);
+
   return {
     slug: item.slug,
     videoPath,
@@ -101,12 +107,18 @@ await access(fromRoot("output", "review", "index.html"));
 const qualityIndex = await readJson(fromRoot("output", "quality", "index.json"));
 assert(qualityIndex.count === index.count, "quality index count mismatch");
 assert(qualityIndex.averageScore >= 90, "average quality score is below threshold");
+const providerIndex = await readJson(fromRoot("output", "provider-jobs", "index.json"));
+assert(providerIndex.mode === "dry_run", "provider jobs must stay in dry-run mode");
+assert(providerIndex.count === index.count, "provider job count mismatch");
+assert(providerIndex.entries.every((entry) => entry.submitted === false), "dry-run provider jobs must not be submitted");
+await access(fromRoot("output", "provider-jobs", "provider-plan.md"));
 const publishIndex = await readJson(fromRoot("output", "publish", "index.json"));
 assert(publishIndex.mode === "dry_run", "publish prep must stay in dry-run mode");
 assert(publishIndex.entries.length >= index.count, "publish index does not include enough payloads");
 await access(fromRoot("output", "publish", "publish-plan.md"));
 const operationsReport = await readJson(fromRoot("output", "operations", "run-report.json"));
 assert(operationsReport.summary.drafts === index.count, "operations report draft count mismatch");
+assert(operationsReport.summary.providerJobs === providerIndex.count, "operations report provider job count mismatch");
 assert(operationsReport.summary.publishPayloads === publishIndex.entries.length, "operations report publish count mismatch");
 await access(fromRoot("output", "operations", "content-calendar.md"));
 

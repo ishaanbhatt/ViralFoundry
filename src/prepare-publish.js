@@ -11,8 +11,14 @@ function buildPayload({ draftPackage, manifest, qualityReport, variant }) {
     caption: `${draftPackage.metadata.description}\n\n${draftPackage.metadata.hashtags.join(" ")}`,
     videoPath: manifest.outputPath,
     thumbnailPath: manifest.thumbnailPath,
+    providerJobPath: `output/provider-jobs/${draftPackage.slug}.provider-job.json`,
     durationSeconds: manifest.durationSeconds,
     aspectRatio: variant.aspectRatio,
+    assetProvenance: {
+      renderSource: "local_render_fallback",
+      providerMode: "dry_run",
+      providerOutputReady: false
+    },
     readiness: {
       qualityRecommendation: qualityReport.recommendation,
       qualityScore: qualityReport.score,

@@ -15,6 +15,7 @@ function isoDate(date) {
 export async function generateOperations() {
   const draftIndex = await readJson(fromRoot("drafts", "index.json"));
   const qualityIndex = await readJson(fromRoot("output", "quality", "index.json"));
+  const providerIndex = await readJson(fromRoot("output", "provider-jobs", "index.json"));
   const publishIndex = await readJson(fromRoot("output", "publish", "index.json"));
   await rm(fromRoot("output", "operations"), { recursive: true, force: true });
   await mkdir(fromRoot("output", "operations"), { recursive: true });
@@ -41,11 +42,14 @@ export async function generateOperations() {
       drafts: draftIndex.count,
       renderedVideos: draftIndex.count,
       averageQualityScore: qualityIndex.averageScore,
+      providerJobs: providerIndex.count,
+      providerMode: providerIndex.mode,
       publishPayloads: publishIndex.entries.length,
       reviewBoard: "output/review/index.html"
     },
     calendar,
     risks: [
+      "Provider jobs are contract-only dry runs until credentials, polling, storage, and cost ledgers exist.",
       "Publishing remains dry-run until credentials and upload clients are implemented.",
       "Audio is a generated guide track until final voiceover is recorded or synthesized.",
       "Human review is still required before public distribution."

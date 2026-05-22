@@ -1,5 +1,6 @@
 import { generateDrafts } from "./generate-drafts.js";
 import { generateOperations } from "./generate-operations.js";
+import { generateProviderJobs } from "./generate-provider-jobs.js";
 import { generateReviewBoard } from "./generate-review.js";
 import { preparePublish } from "./prepare-publish.js";
 import { renderVideos } from "./render-videos.js";
@@ -16,6 +17,9 @@ console.log(`Design review complete: ${review.reviewPath}`);
 
 const quality = await scoreQuality();
 console.log(`Phase 3 complete: scored ${quality.count} package(s), average ${quality.averageScore}.`);
+
+const providerJobs = await generateProviderJobs();
+console.log(`Provider dry run complete: generated ${providerJobs.count} job contract(s).`);
 
 const publish = await preparePublish();
 console.log(`Phase 4 complete: prepared ${publish.entries.length} dry-run publish payload(s).`);
