@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T05:44:08.939Z",
+  "generatedAt": "2026-05-22T05:51:11.793Z",
   "summary": {
     "drafts": 2,
     "renderedVideos": 2,
@@ -7,6 +7,8 @@
     "providerJobs": 2,
     "providerMode": "dry_run",
     "publishPayloads": 5,
+    "publishLedgerEntries": 5,
+    "pendingApprovals": 5,
     "reviewBoard": "output/review/index.html"
   },
   "calendar": [
@@ -37,6 +39,7 @@
   "risks": [
     "Provider jobs are contract-only dry runs until credentials, polling, storage, and cost ledgers exist.",
     "Publishing remains dry-run until credentials and upload clients are implemented.",
+    "Publish ledger entries require human approval before any future live upload attempt.",
     "Audio is a generated guide track until final voiceover is recorded or synthesized.",
     "Human review is still required before public distribution."
   ]

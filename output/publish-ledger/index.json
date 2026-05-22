@@ -1,0 +1,196 @@
+{
+  "generatedAt": "2026-05-22T05:51:11.792Z",
+  "mode": "dry_run",
+  "count": 5,
+  "submittedCount": 0,
+  "pendingApprovalCount": 5,
+  "entries": [
+    {
+      "id": "why-local-rendering-changes-the-product-risk-youtube-shorts",
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "platform": "YouTube Shorts",
+      "mode": "dry_run",
+      "payloadPath": "output/publish/why-local-rendering-changes-the-product-risk/youtube-shorts.publish.json",
+      "idempotencyKey": "why-local-rendering-changes-the-product-risk-youtube-shorts",
+      "requiredCredential": "YOUTUBE_SHORTS_ACCESS_TOKEN",
+      "providerJobPath": "output/provider-jobs/why-local-rendering-changes-the-product-risk.provider-job.json",
+      "assetProvenance": {
+        "renderSource": "local_render_fallback",
+        "providerMode": "dry_run",
+        "providerOutputReady": false
+      },
+      "upload": {
+        "status": "not_submitted",
+        "platformPostId": null,
+        "platformUrl": null,
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "nextRetryAt": null,
+        "retryable": false,
+        "errors": []
+      },
+      "approval": {
+        "status": "human_approval_required",
+        "approvedBy": null,
+        "approvedAt": null,
+        "blockers": [
+          "human_approval",
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      }
+    },
+    {
+      "id": "why-local-rendering-changes-the-product-risk-tiktok",
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "platform": "TikTok",
+      "mode": "dry_run",
+      "payloadPath": "output/publish/why-local-rendering-changes-the-product-risk/tiktok.publish.json",
+      "idempotencyKey": "why-local-rendering-changes-the-product-risk-tiktok",
+      "requiredCredential": "TIKTOK_ACCESS_TOKEN",
+      "providerJobPath": "output/provider-jobs/why-local-rendering-changes-the-product-risk.provider-job.json",
+      "assetProvenance": {
+        "renderSource": "local_render_fallback",
+        "providerMode": "dry_run",
+        "providerOutputReady": false
+      },
+      "upload": {
+        "status": "not_submitted",
+        "platformPostId": null,
+        "platformUrl": null,
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "nextRetryAt": null,
+        "retryable": false,
+        "errors": []
+      },
+      "approval": {
+        "status": "human_approval_required",
+        "approvedBy": null,
+        "approvedAt": null,
+        "blockers": [
+          "human_approval",
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      }
+    },
+    {
+      "id": "why-local-rendering-changes-the-product-risk-linkedin",
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "platform": "LinkedIn",
+      "mode": "dry_run",
+      "payloadPath": "output/publish/why-local-rendering-changes-the-product-risk/linkedin.publish.json",
+      "idempotencyKey": "why-local-rendering-changes-the-product-risk-linkedin",
+      "requiredCredential": "LINKEDIN_ACCESS_TOKEN",
+      "providerJobPath": "output/provider-jobs/why-local-rendering-changes-the-product-risk.provider-job.json",
+      "assetProvenance": {
+        "renderSource": "local_render_fallback",
+        "providerMode": "dry_run",
+        "providerOutputReady": false
+      },
+      "upload": {
+        "status": "not_submitted",
+        "platformPostId": null,
+        "platformUrl": null,
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "nextRetryAt": null,
+        "retryable": false,
+        "errors": []
+      },
+      "approval": {
+        "status": "human_approval_required",
+        "approvedBy": null,
+        "approvedAt": null,
+        "blockers": [
+          "human_approval",
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      }
+    },
+    {
+      "id": "the-minimum-useful-video-factory-youtube-shorts",
+      "slug": "the-minimum-useful-video-factory",
+      "platform": "YouTube Shorts",
+      "mode": "dry_run",
+      "payloadPath": "output/publish/the-minimum-useful-video-factory/youtube-shorts.publish.json",
+      "idempotencyKey": "the-minimum-useful-video-factory-youtube-shorts",
+      "requiredCredential": "YOUTUBE_SHORTS_ACCESS_TOKEN",
+      "providerJobPath": "output/provider-jobs/the-minimum-useful-video-factory.provider-job.json",
+      "assetProvenance": {
+        "renderSource": "local_render_fallback",
+        "providerMode": "dry_run",
+        "providerOutputReady": false
+      },
+      "upload": {
+        "status": "not_submitted",
+        "platformPostId": null,
+        "platformUrl": null,
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "nextRetryAt": null,
+        "retryable": false,
+        "errors": []
+      },
+      "approval": {
+        "status": "human_approval_required",
+        "approvedBy": null,
+        "approvedAt": null,
+        "blockers": [
+          "human_approval",
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      }
+    },
+    {
+      "id": "the-minimum-useful-video-factory-instagram-reels",
+      "slug": "the-minimum-useful-video-factory",
+      "platform": "Instagram Reels",
+      "mode": "dry_run",
+      "payloadPath": "output/publish/the-minimum-useful-video-factory/instagram-reels.publish.json",
+      "idempotencyKey": "the-minimum-useful-video-factory-instagram-reels",
+      "requiredCredential": "INSTAGRAM_REELS_ACCESS_TOKEN",
+      "providerJobPath": "output/provider-jobs/the-minimum-useful-video-factory.provider-job.json",
+      "assetProvenance": {
+        "renderSource": "local_render_fallback",
+        "providerMode": "dry_run",
+        "providerOutputReady": false
+      },
+      "upload": {
+        "status": "not_submitted",
+        "platformPostId": null,
+        "platformUrl": null,
+        "attempts": 0,
+        "lastAttemptAt": null,
+        "nextRetryAt": null,
+        "retryable": false,
+        "errors": []
+      },
+      "approval": {
+        "status": "human_approval_required",
+        "approvedBy": null,
+        "approvedAt": null,
+        "blockers": [
+          "human_approval",
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      }
+    }
+  ],
+  "livePublishingRequirements": [
+    "Load platform credentials from the runtime environment.",
+    "Require human approval before the first upload attempt.",
+    "Persist returned platform IDs and canonical URLs.",
+    "Record retry attempts, retry timing, and terminal upload errors.",
+    "Keep idempotency keys stable across retries."
+  ]
+}

@@ -43,10 +43,17 @@ Goal: keep building the local video draft machine until the major design aspects
 - [x] Preserve local MP4s as the fallback render source and record provider provenance.
 - [x] Extend validation and operations reporting to cover provider job artifacts.
 
-## Phase 7: Product Documentation
+## Phase 7: Publish Ledger And Approval Controls
+
+- [x] Generate one dry-run publish ledger entry per platform payload.
+- [x] Track future platform IDs, upload status, retry state, errors, idempotency keys, and approval blockers.
+- [x] Require human approval in ledger state before any future live upload attempt.
+- [x] Extend validation and operations reporting to cover publish ledger artifacts.
+
+## Phase 8: Product Documentation
 
 - [x] Document the full local product workflow across draft, design, render, QA, review, publish prep, and operations.
-- [x] Document the provider contract phase and the next integration phases left after local MP4 production is proven.
+- [x] Document the provider contract, publish ledger phase, and the next integration phases left after local MP4 production is proven.
 
 ## Current Validation Gates
 

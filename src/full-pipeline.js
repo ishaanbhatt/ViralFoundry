@@ -1,5 +1,6 @@
 import { generateDrafts } from "./generate-drafts.js";
 import { generateOperations } from "./generate-operations.js";
+import { generatePublishLedger } from "./generate-publish-ledger.js";
 import { generateProviderJobs } from "./generate-provider-jobs.js";
 import { generateReviewBoard } from "./generate-review.js";
 import { preparePublish } from "./prepare-publish.js";
@@ -23,6 +24,9 @@ console.log(`Provider dry run complete: generated ${providerJobs.count} job cont
 
 const publish = await preparePublish();
 console.log(`Phase 4 complete: prepared ${publish.entries.length} dry-run publish payload(s).`);
+
+const publishLedger = await generatePublishLedger();
+console.log(`Publish ledger complete: recorded ${publishLedger.count} dry-run ledger entries.`);
 
 const operations = await generateOperations();
 console.log(`Phase 5 complete: operations report covers ${operations.summary.drafts} draft(s).`);

@@ -3,6 +3,7 @@ import { fromRoot, readJson, slugify, writeJson, writeText } from "./lib/fs-util
 import { markdownList } from "./lib/text.js";
 
 function buildPayload({ draftPackage, manifest, qualityReport, variant }) {
+  const platformKey = slugify(variant.platform).replaceAll("-", "_").toUpperCase();
   return {
     mode: "dry_run",
     platform: variant.platform,
@@ -26,7 +27,7 @@ function buildPayload({ draftPackage, manifest, qualityReport, variant }) {
       blockers: draftPackage.assets.missingForPublish
     },
     integrationContract: {
-      requiredCredential: `${slugify(variant.platform).toUpperCase()}_ACCESS_TOKEN`,
+      requiredCredential: `${platformKey}_ACCESS_TOKEN`,
       uploadEndpoint: "not_configured",
       idempotencyKey: `${draftPackage.slug}-${slugify(variant.platform)}`
     }

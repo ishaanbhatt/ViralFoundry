@@ -25,7 +25,7 @@
     ]
   },
   "integrationContract": {
-    "requiredCredential": "YOUTUBE-SHORTS_ACCESS_TOKEN",
+    "requiredCredential": "YOUTUBE_SHORTS_ACCESS_TOKEN",
     "uploadEndpoint": "not_configured",
     "idempotencyKey": "the-minimum-useful-video-factory-youtube-shorts"
   }

@@ -17,6 +17,7 @@ The pipeline starts from `content/briefs.json` and produces:
 - Quality reports under `output/quality/`
 - Dry-run provider job contracts under `output/provider-jobs/`
 - Dry-run publish payloads under `output/publish/`
+- Dry-run publish ledger entries under `output/publish-ledger/`
 - An operations report and content calendar under `output/operations/`
 
 Use it when you want a repeatable local factory for short-form content ideas, review, and publish preparation before investing in hosted infrastructure, platform upload clients, paid APIs, or paid traffic.
@@ -38,6 +39,7 @@ Use it when you want a repeatable local factory for short-form content ideas, re
 │   ├── quality/                 # Quality scores and recommendations
 │   ├── provider-jobs/           # Dry-run video provider contracts
 │   ├── publish/                 # Dry-run publishing payloads
+│   ├── publish-ledger/          # Upload status, approval, retry, and platform ID ledger
 │   └── operations/              # Run report and content calendar
 ├── src/                         # Pipeline implementation
 ├── package.json                 # NPM scripts and runtime requirements
@@ -76,7 +78,7 @@ Then run the full local pipeline:
 npm run full
 ```
 
-This command generates draft packages, renders MP4s, builds review assets, scores quality, generates dry-run provider contracts, prepares dry-run publish payloads, creates operations artifacts, and validates the result.
+This command generates draft packages, renders MP4s, builds review assets, scores quality, generates dry-run provider contracts, prepares dry-run publish payloads, writes a dry-run publish ledger, creates operations artifacts, and validates the result.
 
 Expected success output ends with a validation summary similar to:
 
@@ -123,6 +125,12 @@ npm run publish:prepare
 Creates dry-run publish payloads in `output/publish/`. This does not publish publicly.
 
 ```bash
+npm run publish:ledger
+```
+
+Creates dry-run publish ledger entries in `output/publish-ledger/`. This records future upload status, platform IDs, retry state, errors, and human approval requirements without posting publicly.
+
+```bash
 npm run operations
 ```
 
@@ -138,7 +146,7 @@ Runs the baseline build flow: generate, render, and review.
 npm run validate
 ```
 
-Validates generated packages, videos, thumbnails, previews, manifests, quality reports, provider jobs, publish payloads, review board output, and operations artifacts.
+Validates generated packages, videos, thumbnails, previews, manifests, quality reports, provider jobs, publish payloads, publish ledger state, review board output, and operations artifacts.
 
 ```bash
 npm run full
@@ -223,13 +231,22 @@ Publishing is currently dry-run only.
 - Future upload client contract
 - Idempotency key
 
+`output/publish-ledger/` contains one dry-run ledger entry per publish payload with:
+
+- Upload status
+- Returned platform post ID and URL placeholders
+- Retry attempts and retry timing
+- Upload errors
+- Human approval status and blockers
+- Stable idempotency key
+
 The local machine does not post publicly yet. Known blockers are:
 
 - Final voiceover or approved audio source
 - Brand pack
 - Platform credentials
 - Platform upload clients
-- Publish ledger for returned platform IDs
+- Credential-backed upload clients that update the publish ledger with returned platform IDs
 - Human approval controls before live posting
 
 ## Provider Job Contracts

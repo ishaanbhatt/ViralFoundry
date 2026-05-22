@@ -116,10 +116,28 @@ const publishIndex = await readJson(fromRoot("output", "publish", "index.json"))
 assert(publishIndex.mode === "dry_run", "publish prep must stay in dry-run mode");
 assert(publishIndex.entries.length >= index.count, "publish index does not include enough payloads");
 await access(fromRoot("output", "publish", "publish-plan.md"));
+const publishLedger = await readJson(fromRoot("output", "publish-ledger", "index.json"));
+assert(publishLedger.mode === "dry_run", "publish ledger must stay in dry-run mode");
+assert(publishLedger.count === publishIndex.entries.length, "publish ledger count mismatch");
+assert(publishLedger.submittedCount === 0, "dry-run publish ledger must not contain submitted uploads");
+assert(
+  publishLedger.entries.every((entry) => entry.upload.status === "not_submitted" && entry.upload.platformPostId === null),
+  "dry-run publish ledger entries must not have platform upload IDs"
+);
+assert(
+  publishLedger.entries.every((entry) => entry.approval.status === "human_approval_required"),
+  "publish ledger entries must require human approval"
+);
+assert(
+  publishLedger.entries.every((entry) => /^[A-Z0-9_]+$/.test(entry.requiredCredential)),
+  "publish ledger credentials must be environment-variable safe"
+);
+await access(fromRoot("output", "publish-ledger", "publish-ledger.md"));
 const operationsReport = await readJson(fromRoot("output", "operations", "run-report.json"));
 assert(operationsReport.summary.drafts === index.count, "operations report draft count mismatch");
 assert(operationsReport.summary.providerJobs === providerIndex.count, "operations report provider job count mismatch");
 assert(operationsReport.summary.publishPayloads === publishIndex.entries.length, "operations report publish count mismatch");
+assert(operationsReport.summary.publishLedgerEntries === publishLedger.count, "operations report publish ledger count mismatch");
 await access(fromRoot("output", "operations", "content-calendar.md"));
 
 const results = [];
