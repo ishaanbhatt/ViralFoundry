@@ -1,0 +1,133 @@
+{
+  "workspace": "ViralFoundry",
+  "timezone": "America/Edmonton",
+  "default_platforms": ["tiktok", "instagram_reels", "youtube_shorts"],
+  "niches": [
+    {
+      "id": "archive-317",
+      "name": "The Archive at 3:17",
+      "content_pillar": "original_ai_horror",
+      "source_mode": "original_ip",
+      "risk_level": "medium",
+      "daily_posts": 2,
+      "account_count": 1,
+      "duration_seconds": 75,
+      "platforms": ["tiktok", "instagram_reels", "youtube_shorts"],
+      "uses_ai_generated_media": true,
+      "requires_source_permission": false,
+      "autonomous_publish": false,
+      "monetization_routes": ["patreon", "youtube_shorts", "long-form compilations", "digital story collections", "merch"],
+      "hypotheses": [
+        "Recurring lore and comment-led episodes will outperform one-off scary facts.",
+        "Audio drops and unresolved endings will increase average view duration."
+      ],
+      "creative_rules": [
+        "Use original characters, locations, and rules.",
+        "Avoid depicting real private people or minors.",
+        "Keep each episode understandable without prior context."
+      ],
+      "blocked_topics": ["real-person accusations", "graphic violence", "self-harm instructions"]
+    },
+    {
+      "id": "setup-under-budget",
+      "name": "Setup Under Budget",
+      "content_pillar": "affiliate_decision_help",
+      "source_mode": "original_review_or_research",
+      "risk_level": "low",
+      "daily_posts": 2,
+      "account_count": 1,
+      "duration_seconds": 45,
+      "platforms": ["tiktok", "instagram_reels", "youtube_shorts"],
+      "uses_ai_generated_media": true,
+      "requires_source_permission": false,
+      "autonomous_publish": false,
+      "monetization_routes": ["amazon affiliate", "brand sponsorships", "digital setup guides", "newsletter"],
+      "hypotheses": [
+        "Buyer-intent product explainers will monetize faster than pure entertainment.",
+        "Under-budget comparisons will drive saves and affiliate clicks."
+      ],
+      "creative_rules": [
+        "Disclose affiliate intent when applicable.",
+        "Prefer tested products or clearly label research-only claims.",
+        "Start with the result or problem solved."
+      ],
+      "blocked_topics": ["fake reviews", "undisclosed paid promotion", "medical claims"]
+    },
+    {
+      "id": "internet-mysteries",
+      "name": "One Minute Internet Mysteries",
+      "content_pillar": "mini_documentary",
+      "source_mode": "sourced_original_commentary",
+      "risk_level": "medium",
+      "daily_posts": 1,
+      "account_count": 1,
+      "duration_seconds": 60,
+      "platforms": ["tiktok", "instagram_reels", "youtube_shorts"],
+      "uses_ai_generated_media": true,
+      "requires_source_permission": false,
+      "autonomous_publish": false,
+      "monetization_routes": ["youtube_long_form", "newsletter", "sponsorships", "research packs"],
+      "hypotheses": [
+        "Sourced internet history with clear stakes will beat generic fact channels.",
+        "Save-worthy explainers will outperform shock-only hooks on Instagram."
+      ],
+      "creative_rules": [
+        "Track citations for factual claims.",
+        "Use public-domain or licensed visuals.",
+        "Avoid harassment, doxxing, or live accusations."
+      ],
+      "blocked_topics": ["unverified criminal accusations", "private personal data", "election persuasion"]
+    },
+    {
+      "id": "reddit-court-original",
+      "name": "Reddit Court, But Original",
+      "content_pillar": "fictional_moral_dilemmas",
+      "source_mode": "submitted_or_original_story",
+      "risk_level": "medium",
+      "daily_posts": 1,
+      "account_count": 1,
+      "duration_seconds": 70,
+      "platforms": ["tiktok", "instagram_reels", "youtube_shorts"],
+      "uses_ai_generated_media": true,
+      "requires_source_permission": true,
+      "autonomous_publish": false,
+      "monetization_routes": ["podcast compilations", "newsletter", "sponsorships", "community submissions"],
+      "hypotheses": [
+        "Original dilemmas with a recurring judge voice will differentiate from copied Reddit narration.",
+        "Comment verdict prompts will lift comment rate."
+      ],
+      "creative_rules": [
+        "Use submitted stories with permission or fully original fiction.",
+        "Do not scrape Reddit posts for commercial reuse.",
+        "End with a specific verdict question."
+      ],
+      "blocked_topics": ["real names", "defamation", "minors in sexual contexts"]
+    },
+    {
+      "id": "clip-doctor",
+      "name": "Clip Doctor",
+      "content_pillar": "authorized_streamer_commentary",
+      "source_mode": "licensed_or_partnered_clip",
+      "risk_level": "high",
+      "daily_posts": 1,
+      "account_count": 1,
+      "duration_seconds": 50,
+      "platforms": ["tiktok", "instagram_reels", "youtube_shorts"],
+      "uses_ai_generated_media": false,
+      "requires_source_permission": true,
+      "autonomous_publish": false,
+      "monetization_routes": ["creator retainers", "revenue share", "sponsorship packaging", "editing agency offer"],
+      "hypotheses": [
+        "Authorized clip analysis is more defensible than random streamer reposting.",
+        "Context-before-clip packaging improves retention."
+      ],
+      "creative_rules": [
+        "Only use clips from creators with explicit written permission.",
+        "Add meaningful commentary, context, or analysis.",
+        "Store source URL, license notes, and revenue-share terms."
+      ],
+      "blocked_topics": ["unauthorized clips", "harassment", "copyrighted music without clearance"]
+    }
+  ]
+}
+

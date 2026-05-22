@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "viralfoundry"
+version = "0.1.0"
+description = "Autonomous short-form content planning, publishing, and learning system."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Ishaan Bhatt" }]
+dependencies = []
+
+[project.scripts]
+viralfoundry = "viralfoundry.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
