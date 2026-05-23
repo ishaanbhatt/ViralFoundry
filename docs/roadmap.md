@@ -58,20 +58,30 @@ Validation evidence:
 
 ## Phase 2: Render and QA
 
+Status: complete for the selected local render-and-preflight slice. The renderer produces real MP4 files from draft packages and records both successful and failed attempts in SQLite for retry.
+
 Goal: produce real 9:16 MP4s locally.
 
 Build:
 
-- FFmpeg render pipeline or Remotion worker.
-- Caption burn-in.
-- Safe-margin checks.
-- Duration, codec, and loudness checks.
-- Black-frame and missing-audio checks.
+- Complete: FFmpeg render pipeline from `var/drafts/index.json` into `var/renders/`.
+- Complete: caption burn-in through generated caption frames.
+- Complete: safe-margin metadata checks.
+- Complete: duration, codec, and loudness checks.
+- Complete: black-frame and missing-audio checks.
+- Complete: render attempts table for persisted success/failure history.
 
 Exit criteria:
 
 - Generated videos pass platform preflight checks.
 - Render failures are persisted and retryable.
+
+Validation evidence:
+
+- Complete: `PYTHONPATH=src python3 -m viralfoundry render --draft-index var/drafts/index.json --out var/renders --limit 1` wrote `render.mp4` and `preflight.json`.
+- Complete: sample preflight reported h264, 1080x1920, 75.0s duration, audio present, mean volume -35.1 dB, no sustained black frames, and status `pass`.
+- Complete: missing-renderer and failed-render attempts were persisted in SQLite with status `fail`.
+- Complete: `PYTHONPATH=src python3 -m unittest discover -s tests` ran 11 tests successfully.
 
 ## Phase 3: YouTube First
 

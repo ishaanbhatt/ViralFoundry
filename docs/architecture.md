@@ -20,6 +20,7 @@ The current scaffold implements:
 - Schedule planner.
 - Policy gate.
 - Local draft package generator.
+- Local FFmpeg render and preflight worker.
 - SQLite ledger.
 - Dry-run publisher.
 - Sample metrics ingestion.
@@ -31,6 +32,7 @@ Commands:
 PYTHONPATH=src python3 -m viralfoundry init-db
 PYTHONPATH=src python3 -m viralfoundry plan --days 7
 PYTHONPATH=src python3 -m viralfoundry draft
+PYTHONPATH=src python3 -m viralfoundry render
 PYTHONPATH=src python3 -m viralfoundry publish-dry-run
 PYTHONPATH=src python3 -m viralfoundry ingest-sample-metrics
 PYTHONPATH=src python3 -m viralfoundry rank

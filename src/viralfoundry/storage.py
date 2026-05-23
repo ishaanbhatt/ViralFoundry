@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable, List
 
@@ -31,6 +32,17 @@ CREATE TABLE IF NOT EXISTS publish_jobs (
   render_spec_json TEXT NOT NULL,
   state TEXT NOT NULL,
   dry_run_payload_uri TEXT
+);
+
+CREATE TABLE IF NOT EXISTS render_attempts (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  publish_job_id TEXT NOT NULL,
+  draft_package_uri TEXT NOT NULL,
+  output_uri TEXT NOT NULL,
+  report_uri TEXT NOT NULL,
+  status TEXT NOT NULL,
+  error_message TEXT NOT NULL,
+  created_at TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS metric_snapshots (
@@ -140,6 +152,44 @@ def mark_dry_run_payload(db_path: Path, publish_job_id: str, uri: str) -> None:
         conn.commit()
 
 
+def record_render_result(
+    db_path: Path,
+    publish_job_id: str,
+    draft_package_uri: str,
+    output_uri: str,
+    report_uri: str,
+    status: str,
+    error_message: str = "",
+) -> None:
+    init_db(db_path)
+    created_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    with connect(db_path) as conn:
+        conn.execute(
+            """
+            INSERT INTO render_attempts (
+              publish_job_id, draft_package_uri, output_uri, report_uri,
+              status, error_message, created_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                publish_job_id,
+                draft_package_uri,
+                output_uri,
+                report_uri,
+                status,
+                error_message,
+                created_at,
+            ),
+        )
+        conn.commit()
+
+
+def list_render_attempts(db_path: Path) -> List[sqlite3.Row]:
+    init_db(db_path)
+    with connect(db_path) as conn:
+        return list(conn.execute("SELECT * FROM render_attempts ORDER BY id"))
+
+
 def insert_metrics(db_path: Path, snapshots: Iterable[MetricSnapshot]) -> None:
     init_db(db_path)
     with connect(db_path) as conn:
@@ -230,4 +280,3 @@ def insert_scores(db_path: Path, scores: Iterable[PerformanceScore]) -> None:
                 ),
             )
         conn.commit()
-

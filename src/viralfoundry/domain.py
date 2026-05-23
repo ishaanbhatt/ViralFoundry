@@ -26,6 +26,11 @@ class PolicyStatus(str, Enum):
     BLOCK = "block"
 
 
+class RenderStatus(str, Enum):
+    PASS = "pass"
+    FAIL = "fail"
+
+
 @dataclass
 class NicheConfig:
     id: str
@@ -181,6 +186,36 @@ class DraftPackage:
         data = asdict(self)
         data["lifecycle_state"] = self.lifecycle_state.value
         data["policy"] = self.policy.to_dict()
+        return data
+
+
+@dataclass
+class RenderPreflight:
+    status: RenderStatus
+    checks: Dict[str, Any]
+    findings: List[str]
+
+    def to_dict(self) -> Dict[str, Any]:
+        data = asdict(self)
+        data["status"] = self.status.value
+        return data
+
+
+@dataclass
+class RenderResult:
+    publish_job_id: str
+    draft_package_uri: str
+    output_uri: str
+    report_uri: str
+    status: RenderStatus
+    error_message: str
+    preflight: RenderPreflight
+    created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+    def to_dict(self) -> Dict[str, Any]:
+        data = asdict(self)
+        data["status"] = self.status.value
+        data["preflight"] = self.preflight.to_dict()
         return data
 
 

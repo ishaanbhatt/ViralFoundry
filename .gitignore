@@ -14,6 +14,12 @@ var/outbox/*.json
 var/outbox/**/*.json
 var/drafts/*.json
 var/drafts/**/*.json
+var/renders/*.json
+var/renders/**/*.json
+var/renders/*.mp4
+var/renders/**/*.mp4
+var/renders/*.ppm
+var/renders/**/*.ppm
 var/notifications/*.json
 var/notifications/*.jsonl
 storage/

@@ -11,6 +11,7 @@ from .domain import MetricSnapshot, PolicyStatus, PostPlan
 from .planner import load_config, plan_content, plans_to_json
 from .providers.dry_run import publish_dry_run
 from .providers.local_generation import write_draft_packages
+from .providers.local_render import render_from_index
 from .storage import init_db, insert_metrics, insert_scores, latest_metric_snapshots, save_plans
 
 
@@ -19,6 +20,7 @@ DEFAULT_CONFIG = PROJECT_ROOT / "config" / "niches.json"
 DEFAULT_DB = PROJECT_ROOT / "var" / "viralfoundry.db"
 DEFAULT_PLAN = PROJECT_ROOT / "var" / "outbox" / "plan.json"
 DEFAULT_DRAFTS = PROJECT_ROOT / "var" / "drafts"
+DEFAULT_RENDERS = PROJECT_ROOT / "var" / "renders"
 
 
 def main(argv: Optional[List[str]] = None) -> int:
@@ -41,6 +43,13 @@ def main(argv: Optional[List[str]] = None) -> int:
     draft_parser.add_argument("--plan", type=Path, default=DEFAULT_PLAN)
     draft_parser.add_argument("--out", type=Path, default=DEFAULT_DRAFTS)
     draft_parser.add_argument("--limit", type=int)
+
+    render_parser = sub.add_parser("render")
+    render_parser.add_argument("--draft-index", type=Path, default=DEFAULT_DRAFTS / "index.json")
+    render_parser.add_argument("--out", type=Path, default=DEFAULT_RENDERS)
+    render_parser.add_argument("--limit", type=int)
+    render_parser.add_argument("--ffmpeg-bin", default="ffmpeg")
+    render_parser.add_argument("--ffprobe-bin", default="ffprobe")
 
     sub.add_parser("ingest-sample-metrics")
     sub.add_parser("rank")
@@ -77,6 +86,20 @@ def main(argv: Optional[List[str]] = None) -> int:
         if written:
             print(f"Index: {args.out / 'index.json'}")
         return 0
+
+    if args.command == "render":
+        results = render_from_index(
+            db_path=args.db,
+            index_path=args.draft_index,
+            out_dir=args.out,
+            limit=args.limit,
+            ffmpeg_bin=args.ffmpeg_bin,
+            ffprobe_bin=args.ffprobe_bin,
+        )
+        passed = sum(1 for result in results if result.status.value == "pass")
+        failed = len(results) - passed
+        print(f"Rendered {passed} packages to {args.out}; {failed} failed preflight")
+        return 1 if failed else 0
 
     if args.command == "ingest-sample-metrics":
         plans = _load_plans(DEFAULT_PLAN) if DEFAULT_PLAN.exists() else []
