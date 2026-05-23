@@ -12,6 +12,8 @@ build/
 var/*.db
 var/outbox/*.json
 var/outbox/**/*.json
+var/drafts/*.json
+var/drafts/**/*.json
 var/notifications/*.json
 var/notifications/*.jsonl
 storage/

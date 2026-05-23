@@ -19,6 +19,7 @@ The current scaffold implements:
 - JSON niche configuration.
 - Schedule planner.
 - Policy gate.
+- Local draft package generator.
 - SQLite ledger.
 - Dry-run publisher.
 - Sample metrics ingestion.
@@ -29,6 +30,7 @@ Commands:
 ```bash
 PYTHONPATH=src python3 -m viralfoundry init-db
 PYTHONPATH=src python3 -m viralfoundry plan --days 7
+PYTHONPATH=src python3 -m viralfoundry draft
 PYTHONPATH=src python3 -m viralfoundry publish-dry-run
 PYTHONPATH=src python3 -m viralfoundry ingest-sample-metrics
 PYTHONPATH=src python3 -m viralfoundry rank
@@ -214,4 +216,3 @@ Phase three:
 - Observability and traces.
 - Direct YouTube provider.
 - TikTok and Instagram provider adapters.
-

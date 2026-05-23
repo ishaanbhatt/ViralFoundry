@@ -103,6 +103,88 @@ class PolicyDecision:
 
 
 @dataclass
+class ScriptSegment:
+    label: str
+    start_second: int
+    end_second: int
+    narration: str
+    on_screen_text: str
+    visual_prompt: str
+
+
+@dataclass
+class ScriptDraft:
+    provider: str
+    model: str
+    prompt: str
+    title: str
+    hook: str
+    script_text: str
+    segments: List[ScriptSegment]
+    created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+
+@dataclass
+class VoiceSpec:
+    provider: str
+    voice_name: str
+    language: str
+    pace: str
+    estimated_seconds: int
+    script_checksum: str
+
+
+@dataclass
+class AssetProvenance:
+    asset_id: str
+    asset_type: str
+    source_type: str
+    provider: str
+    prompt_or_source: str
+    license_status: str
+    owner_permission_status: str
+    ai_generated: bool
+    checksum: str
+
+
+@dataclass
+class RenderManifest:
+    provider: str
+    platform: str
+    aspect_ratio: str
+    resolution: str
+    duration_seconds: int
+    fps: int
+    caption_style: str
+    safe_margin_percent: int
+    timeline: List[Dict[str, Any]]
+    required_assets: List[str]
+
+
+@dataclass
+class DraftPackage:
+    id: str
+    post_plan_id: str
+    content_id: str
+    niche_id: str
+    platform: str
+    scheduled_at: str
+    lifecycle_state: LifecycleState
+    script: ScriptDraft
+    caption_variants: List[Dict[str, Any]]
+    voice: VoiceSpec
+    render_manifest: RenderManifest
+    provenance: List[AssetProvenance]
+    policy: PolicyDecision
+
+    def to_dict(self) -> Dict[str, Any]:
+        data = asdict(self)
+        data["lifecycle_state"] = self.lifecycle_state.value
+        data["policy"] = self.policy.to_dict()
+        return data
+
+
+@dataclass
 class PostPlan:
     id: str
     content_id: str
@@ -151,4 +233,3 @@ class PerformanceScore:
     interpretation: str
     features: Dict[str, Any]
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
-

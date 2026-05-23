@@ -10,6 +10,7 @@ from .analytics import rank_snapshots
 from .domain import MetricSnapshot, PolicyStatus, PostPlan
 from .planner import load_config, plan_content, plans_to_json
 from .providers.dry_run import publish_dry_run
+from .providers.local_generation import write_draft_packages
 from .storage import init_db, insert_metrics, insert_scores, latest_metric_snapshots, save_plans
 
 
@@ -17,6 +18,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG = PROJECT_ROOT / "config" / "niches.json"
 DEFAULT_DB = PROJECT_ROOT / "var" / "viralfoundry.db"
 DEFAULT_PLAN = PROJECT_ROOT / "var" / "outbox" / "plan.json"
+DEFAULT_DRAFTS = PROJECT_ROOT / "var" / "drafts"
 
 
 def main(argv: Optional[List[str]] = None) -> int:
@@ -34,6 +36,11 @@ def main(argv: Optional[List[str]] = None) -> int:
     publish_parser = sub.add_parser("publish-dry-run")
     publish_parser.add_argument("--plan", type=Path, default=DEFAULT_PLAN)
     publish_parser.add_argument("--outbox", type=Path, default=PROJECT_ROOT / "var" / "outbox")
+
+    draft_parser = sub.add_parser("draft")
+    draft_parser.add_argument("--plan", type=Path, default=DEFAULT_PLAN)
+    draft_parser.add_argument("--out", type=Path, default=DEFAULT_DRAFTS)
+    draft_parser.add_argument("--limit", type=int)
 
     sub.add_parser("ingest-sample-metrics")
     sub.add_parser("rank")
@@ -61,6 +68,14 @@ def main(argv: Optional[List[str]] = None) -> int:
         plans = _load_plans(args.plan)
         written = publish_dry_run(args.db, plans, args.outbox)
         print(f"Wrote {len(written)} dry-run publish payloads to {args.outbox}")
+        return 0
+
+    if args.command == "draft":
+        plans = _load_plans(args.plan)
+        written = write_draft_packages(plans, args.out, args.limit)
+        print(f"Wrote {len(written)} draft packages to {args.out}")
+        if written:
+            print(f"Index: {args.out / 'index.json'}")
         return 0
 
     if args.command == "ingest-sample-metrics":

@@ -23,21 +23,38 @@ Exit criteria:
 
 ## Phase 1: Generation MVP
 
+Status: complete for the selected local draft-package slice. Provider-backed generation can still replace the local stubs later, but the Phase 1 MVP now produces reviewable draft packages from an existing plan file.
+
 Goal: produce publish-ready drafts without public posting.
 
 Build:
 
-- LLM script provider.
-- Caption and hashtag variants.
-- Voice provider adapter.
-- Render manifest generator.
-- Basic FFmpeg or Remotion template.
-- Asset provenance tracking.
+- Complete: draft-package CLI that reads `var/outbox/plan.json` and writes draft artifacts under `var/drafts/`.
+- Complete: script or beat-sheet generator.
+- Complete: caption and hashtag variants.
+- Complete: render manifest generator for a future FFmpeg or Remotion worker.
+- Complete: voice or narration manifest.
+- Complete: policy findings and owner-review status in each draft package.
+- Complete: asset provenance tracking with source type, prompt or source reference, license status, and checksum when available.
+
+Deferred out of this slice:
+
+- Public publishing.
+- Real MP4 rendering.
+- Platform OAuth.
+- Autonomous owner approval.
 
 Exit criteria:
 
 - System creates a complete draft package for each selected post.
 - Owner can inspect script, caption, render manifest, and policy findings.
+- Draft packages preserve provenance and disclosure metadata needed by `docs/policy-guardrails.md`.
+
+Validation evidence:
+
+- Complete: `PYTHONPATH=src python3 -m viralfoundry draft --plan var/outbox/plan.json --out var/drafts --limit 3` wrote 3 draft packages and `var/drafts/index.json`.
+- Complete: sample package contained `script`, `caption_variants`, `voice`, `render_manifest`, `provenance`, and `policy`.
+- Complete: `PYTHONPATH=src python3 -m unittest discover -s tests` ran 6 tests successfully.
 
 ## Phase 2: Render and QA
 
