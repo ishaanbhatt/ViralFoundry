@@ -1,0 +1,236 @@
+{
+  "generatedAt": "2026-05-23T17:01:40.168Z",
+  "mode": "dry_run",
+  "count": 5,
+  "pendingReviewCount": 5,
+  "liveUploadReadyCount": 0,
+  "platforms": [
+    "Instagram Reels",
+    "LinkedIn",
+    "TikTok",
+    "YouTube Shorts"
+  ],
+  "items": [
+    {
+      "id": "why-local-rendering-changes-the-product-risk-youtube-shorts",
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "title": "Why Local Rendering Changes the Product Risk",
+      "platform": "YouTube Shorts",
+      "status": "awaiting_human_approval",
+      "priority": "blocked",
+      "qualityScore": 100,
+      "qualityRecommendation": "approved_for_publish_prep",
+      "packagePath": "drafts/why-local-rendering-changes-the-product-risk/package.json",
+      "reviewBoardPath": "output/review/index.html",
+      "videoPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/why-local-rendering-changes-the-product-risk.mp4",
+      "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+      "publishPayloadPath": "output/publish/why-local-rendering-changes-the-product-risk/youtube-shorts.publish.json",
+      "ledgerEntryId": "why-local-rendering-changes-the-product-risk-youtube-shorts",
+      "idempotencyKey": "why-local-rendering-changes-the-product-risk-youtube-shorts",
+      "requiredCredential": "YOUTUBE_SHORTS_ACCESS_TOKEN",
+      "blockers": [
+        "human_approval",
+        "final_voiceover",
+        "brand_pack",
+        "platform_credentials"
+      ],
+      "reviewChecklist": [
+        "Watch the local MP4 in the review board.",
+        "Confirm title, caption, and thumbnail match the target platform.",
+        "Check for copyright, claims, brand-safety, and factual accuracy issues.",
+        "Confirm final voiceover is ready before live publishing.",
+        "Confirm platform credentials and account destination before upload.",
+        "Resolve publish blockers: final_voiceover, brand_pack, platform_credentials.",
+        "Clear approval blockers: human_approval, final_voiceover, brand_pack, platform_credentials."
+      ],
+      "approvalState": {
+        "approved": false,
+        "approvedBy": null,
+        "approvedAt": null,
+        "approvalSource": "manual_review_required"
+      },
+      "releaseDecision": {
+        "canProceedToLiveUpload": false,
+        "reason": "Dry-run approval queue only; live upload clients, credentials, and explicit human approval are not configured."
+      }
+    },
+    {
+      "id": "why-local-rendering-changes-the-product-risk-tiktok",
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "title": "Why Local Rendering Changes the Product Risk",
+      "platform": "TikTok",
+      "status": "awaiting_human_approval",
+      "priority": "blocked",
+      "qualityScore": 100,
+      "qualityRecommendation": "approved_for_publish_prep",
+      "packagePath": "drafts/why-local-rendering-changes-the-product-risk/package.json",
+      "reviewBoardPath": "output/review/index.html",
+      "videoPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/why-local-rendering-changes-the-product-risk.mp4",
+      "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+      "publishPayloadPath": "output/publish/why-local-rendering-changes-the-product-risk/tiktok.publish.json",
+      "ledgerEntryId": "why-local-rendering-changes-the-product-risk-tiktok",
+      "idempotencyKey": "why-local-rendering-changes-the-product-risk-tiktok",
+      "requiredCredential": "TIKTOK_ACCESS_TOKEN",
+      "blockers": [
+        "human_approval",
+        "final_voiceover",
+        "brand_pack",
+        "platform_credentials"
+      ],
+      "reviewChecklist": [
+        "Watch the local MP4 in the review board.",
+        "Confirm title, caption, and thumbnail match the target platform.",
+        "Check for copyright, claims, brand-safety, and factual accuracy issues.",
+        "Confirm final voiceover is ready before live publishing.",
+        "Confirm platform credentials and account destination before upload.",
+        "Resolve publish blockers: final_voiceover, brand_pack, platform_credentials.",
+        "Clear approval blockers: human_approval, final_voiceover, brand_pack, platform_credentials."
+      ],
+      "approvalState": {
+        "approved": false,
+        "approvedBy": null,
+        "approvedAt": null,
+        "approvalSource": "manual_review_required"
+      },
+      "releaseDecision": {
+        "canProceedToLiveUpload": false,
+        "reason": "Dry-run approval queue only; live upload clients, credentials, and explicit human approval are not configured."
+      }
+    },
+    {
+      "id": "why-local-rendering-changes-the-product-risk-linkedin",
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "title": "Why Local Rendering Changes the Product Risk",
+      "platform": "LinkedIn",
+      "status": "awaiting_human_approval",
+      "priority": "blocked",
+      "qualityScore": 100,
+      "qualityRecommendation": "approved_for_publish_prep",
+      "packagePath": "drafts/why-local-rendering-changes-the-product-risk/package.json",
+      "reviewBoardPath": "output/review/index.html",
+      "videoPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/why-local-rendering-changes-the-product-risk.mp4",
+      "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+      "publishPayloadPath": "output/publish/why-local-rendering-changes-the-product-risk/linkedin.publish.json",
+      "ledgerEntryId": "why-local-rendering-changes-the-product-risk-linkedin",
+      "idempotencyKey": "why-local-rendering-changes-the-product-risk-linkedin",
+      "requiredCredential": "LINKEDIN_ACCESS_TOKEN",
+      "blockers": [
+        "human_approval",
+        "final_voiceover",
+        "brand_pack",
+        "platform_credentials"
+      ],
+      "reviewChecklist": [
+        "Watch the local MP4 in the review board.",
+        "Confirm title, caption, and thumbnail match the target platform.",
+        "Check for copyright, claims, brand-safety, and factual accuracy issues.",
+        "Confirm final voiceover is ready before live publishing.",
+        "Confirm platform credentials and account destination before upload.",
+        "Resolve publish blockers: final_voiceover, brand_pack, platform_credentials.",
+        "Clear approval blockers: human_approval, final_voiceover, brand_pack, platform_credentials."
+      ],
+      "approvalState": {
+        "approved": false,
+        "approvedBy": null,
+        "approvedAt": null,
+        "approvalSource": "manual_review_required"
+      },
+      "releaseDecision": {
+        "canProceedToLiveUpload": false,
+        "reason": "Dry-run approval queue only; live upload clients, credentials, and explicit human approval are not configured."
+      }
+    },
+    {
+      "id": "the-minimum-useful-video-factory-youtube-shorts",
+      "slug": "the-minimum-useful-video-factory",
+      "title": "The Minimum Useful Video Factory",
+      "platform": "YouTube Shorts",
+      "status": "awaiting_human_approval",
+      "priority": "blocked",
+      "qualityScore": 100,
+      "qualityRecommendation": "approved_for_publish_prep",
+      "packagePath": "drafts/the-minimum-useful-video-factory/package.json",
+      "reviewBoardPath": "output/review/index.html",
+      "videoPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/the-minimum-useful-video-factory.mp4",
+      "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/the-minimum-useful-video-factory.png",
+      "publishPayloadPath": "output/publish/the-minimum-useful-video-factory/youtube-shorts.publish.json",
+      "ledgerEntryId": "the-minimum-useful-video-factory-youtube-shorts",
+      "idempotencyKey": "the-minimum-useful-video-factory-youtube-shorts",
+      "requiredCredential": "YOUTUBE_SHORTS_ACCESS_TOKEN",
+      "blockers": [
+        "human_approval",
+        "final_voiceover",
+        "brand_pack",
+        "platform_credentials"
+      ],
+      "reviewChecklist": [
+        "Watch the local MP4 in the review board.",
+        "Confirm title, caption, and thumbnail match the target platform.",
+        "Check for copyright, claims, brand-safety, and factual accuracy issues.",
+        "Confirm final voiceover is ready before live publishing.",
+        "Confirm platform credentials and account destination before upload.",
+        "Resolve publish blockers: final_voiceover, brand_pack, platform_credentials.",
+        "Clear approval blockers: human_approval, final_voiceover, brand_pack, platform_credentials."
+      ],
+      "approvalState": {
+        "approved": false,
+        "approvedBy": null,
+        "approvedAt": null,
+        "approvalSource": "manual_review_required"
+      },
+      "releaseDecision": {
+        "canProceedToLiveUpload": false,
+        "reason": "Dry-run approval queue only; live upload clients, credentials, and explicit human approval are not configured."
+      }
+    },
+    {
+      "id": "the-minimum-useful-video-factory-instagram-reels",
+      "slug": "the-minimum-useful-video-factory",
+      "title": "The Minimum Useful Video Factory",
+      "platform": "Instagram Reels",
+      "status": "awaiting_human_approval",
+      "priority": "blocked",
+      "qualityScore": 100,
+      "qualityRecommendation": "approved_for_publish_prep",
+      "packagePath": "drafts/the-minimum-useful-video-factory/package.json",
+      "reviewBoardPath": "output/review/index.html",
+      "videoPath": "/Users/ishaanbhatt/Documents/New project 2/output/videos/the-minimum-useful-video-factory.mp4",
+      "thumbnailPath": "/Users/ishaanbhatt/Documents/New project 2/output/thumbnails/the-minimum-useful-video-factory.png",
+      "publishPayloadPath": "output/publish/the-minimum-useful-video-factory/instagram-reels.publish.json",
+      "ledgerEntryId": "the-minimum-useful-video-factory-instagram-reels",
+      "idempotencyKey": "the-minimum-useful-video-factory-instagram-reels",
+      "requiredCredential": "INSTAGRAM_REELS_ACCESS_TOKEN",
+      "blockers": [
+        "human_approval",
+        "final_voiceover",
+        "brand_pack",
+        "platform_credentials"
+      ],
+      "reviewChecklist": [
+        "Watch the local MP4 in the review board.",
+        "Confirm title, caption, and thumbnail match the target platform.",
+        "Check for copyright, claims, brand-safety, and factual accuracy issues.",
+        "Confirm final voiceover is ready before live publishing.",
+        "Confirm platform credentials and account destination before upload.",
+        "Resolve publish blockers: final_voiceover, brand_pack, platform_credentials.",
+        "Clear approval blockers: human_approval, final_voiceover, brand_pack, platform_credentials."
+      ],
+      "approvalState": {
+        "approved": false,
+        "approvedBy": null,
+        "approvedAt": null,
+        "approvalSource": "manual_review_required"
+      },
+      "releaseDecision": {
+        "canProceedToLiveUpload": false,
+        "reason": "Dry-run approval queue only; live upload clients, credentials, and explicit human approval are not configured."
+      }
+    }
+  ],
+  "nextApprovalSteps": [
+    "Review every queued MP4, thumbnail, caption, and platform payload.",
+    "Resolve final voiceover, credential, copyright, and brand-safety blockers.",
+    "Record reviewer identity and timestamp in a persistent approval store before live upload exists.",
+    "Keep live upload disabled until platform clients can consume approved queue items idempotently."
+  ]
+}

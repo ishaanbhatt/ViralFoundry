@@ -18,6 +18,7 @@ The pipeline starts from `content/briefs.json` and produces:
 - Dry-run provider job contracts under `output/provider-jobs/`
 - Dry-run publish payloads under `output/publish/`
 - Dry-run publish ledger entries under `output/publish-ledger/`
+- Manual approval queue items under `output/approvals/`
 - An operations report and content calendar under `output/operations/`
 
 Use it when you want a repeatable local factory for short-form content ideas, review, and publish preparation before investing in hosted infrastructure, platform upload clients, paid APIs, or paid traffic.
@@ -40,6 +41,7 @@ Use it when you want a repeatable local factory for short-form content ideas, re
 │   ├── provider-jobs/           # Dry-run video provider contracts
 │   ├── publish/                 # Dry-run publishing payloads
 │   ├── publish-ledger/          # Upload status, approval, retry, and platform ID ledger
+│   ├── approvals/               # Manual approval queue before live upload can exist
 │   └── operations/              # Run report and content calendar
 ├── src/                         # Pipeline implementation
 ├── package.json                 # NPM scripts and runtime requirements
@@ -79,6 +81,7 @@ npm run full
 ```
 
 This command generates draft packages, renders MP4s, builds review assets, scores quality, generates dry-run provider contracts, prepares dry-run publish payloads, writes a dry-run publish ledger, creates operations artifacts, and validates the result.
+It also stages manual approval queue items so future upload clients have a human-review boundary to consume.
 
 Expected success output ends with a validation summary similar to:
 
@@ -129,6 +132,12 @@ npm run publish:ledger
 ```
 
 Creates dry-run publish ledger entries in `output/publish-ledger/`. This records future upload status, platform IDs, retry state, errors, and human approval requirements without posting publicly.
+
+```bash
+npm run approval
+```
+
+Creates dry-run manual approval queue items in `output/approvals/`. Each item points back to the review board, package, MP4, thumbnail, publish payload, ledger entry, required credential, and idempotency key.
 
 ```bash
 npm run operations
@@ -239,6 +248,15 @@ Publishing is currently dry-run only.
 - Upload errors
 - Human approval status and blockers
 - Stable idempotency key
+
+`output/approvals/` contains one manual approval queue item per ledger entry with:
+
+- Review board, package, video, thumbnail, publish payload, and ledger references
+- Quality score and publish-prep recommendation
+- Required platform credential
+- Stable idempotency key
+- Review checklist for content, claims, brand-safety, platform fit, final voiceover, and destination account
+- Release decision that keeps live upload disabled in dry-run mode
 
 The local machine does not post publicly yet. Known blockers are:
 

@@ -55,6 +55,13 @@ Goal: keep building the local video draft machine until the major design aspects
 - [x] Document the full local product workflow across draft, design, render, QA, review, publish prep, and operations.
 - [x] Document the provider contract, publish ledger phase, and the next integration phases left after local MP4 production is proven.
 
+## Phase 9: Approval Queue
+
+- [x] Generate one manual approval queue item per dry-run publish ledger entry.
+- [x] Tie approval tasks back to review board, package, MP4, thumbnail, publish payload, idempotency key, and credential requirement.
+- [x] Keep live upload disabled until explicit human approval, platform credentials, and live upload clients exist.
+- [x] Extend validation and operations reporting to cover approval queue artifacts.
+
 ## Current Validation Gates
 
 - [x] `npm run build`

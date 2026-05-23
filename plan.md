@@ -25,7 +25,7 @@ Decision principle: build the orchestration layer, not the entire video engine. 
 
 ## Near-Term Plan
 
-Continue the local product roadmap in `progress.md`, then add provider abstraction after Phase 3 quality and approval gates are in place. The first integration phase now starts with one dry-run provider adapter and a provider job contract before adding paid API calls.
+Continue the local product roadmap in `progress.md`, then add provider abstraction and publish controls only after quality gates are in place. The current integration foundation uses dry-run provider contracts, dry-run publish payloads, a publish ledger, and a manual approval queue before any paid API calls or live uploads are added.
 
 ## Future Hosting And Revenue Plan
 

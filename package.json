@@ -12,6 +12,7 @@
     "providers": "node src/generate-provider-jobs.js",
     "publish:prepare": "node src/prepare-publish.js",
     "publish:ledger": "node src/generate-publish-ledger.js",
+    "approval": "node src/generate-approval-queue.js",
     "operations": "node src/generate-operations.js",
     "build": "node src/build-all.js",
     "full": "node src/full-pipeline.js && node src/validate-output.js",

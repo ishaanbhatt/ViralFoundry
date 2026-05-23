@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T05:51:11.793Z",
+  "generatedAt": "2026-05-23T17:01:40.170Z",
   "summary": {
     "drafts": 2,
     "renderedVideos": 2,
@@ -8,12 +8,14 @@
     "providerMode": "dry_run",
     "publishPayloads": 5,
     "publishLedgerEntries": 5,
+    "approvalQueueItems": 5,
     "pendingApprovals": 5,
+    "liveUploadReady": 0,
     "reviewBoard": "output/review/index.html"
   },
   "calendar": [
     {
-      "date": "2026-05-22",
+      "date": "2026-05-23",
       "slug": "why-local-rendering-changes-the-product-risk",
       "title": "Why Local Rendering Changes the Product Risk",
       "platforms": [
@@ -25,7 +27,7 @@
       "status": "ready_for_final_voiceover"
     },
     {
-      "date": "2026-05-24",
+      "date": "2026-05-25",
       "slug": "the-minimum-useful-video-factory",
       "title": "The Minimum Useful Video Factory",
       "platforms": [
@@ -40,6 +42,7 @@
     "Provider jobs are contract-only dry runs until credentials, polling, storage, and cost ledgers exist.",
     "Publishing remains dry-run until credentials and upload clients are implemented.",
     "Publish ledger entries require human approval before any future live upload attempt.",
+    "Approval queue items are manual review tasks, not live upload permissions.",
     "Audio is a generated guide track until final voiceover is recorded or synthesized.",
     "Human review is still required before public distribution."
   ]

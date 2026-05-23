@@ -133,11 +133,30 @@ assert(
   "publish ledger credentials must be environment-variable safe"
 );
 await access(fromRoot("output", "publish-ledger", "publish-ledger.md"));
+const approvalQueue = await readJson(fromRoot("output", "approvals", "index.json"));
+assert(approvalQueue.mode === "dry_run", "approval queue must stay in dry-run mode");
+assert(approvalQueue.count === publishLedger.count, "approval queue count mismatch");
+assert(approvalQueue.pendingReviewCount === approvalQueue.count, "approval queue entries must be pending review");
+assert(approvalQueue.liveUploadReadyCount === 0, "dry-run approval queue must not mark uploads ready");
+assert(
+  approvalQueue.items.every((item) => item.status === "awaiting_human_approval" && item.approvalState.approved === false),
+  "approval queue items must require manual approval"
+);
+assert(
+  approvalQueue.items.every((item) => item.releaseDecision.canProceedToLiveUpload === false),
+  "approval queue must keep live upload disabled"
+);
+assert(
+  approvalQueue.items.every((item) => item.reviewChecklist.length >= 5 && item.reviewBoardPath === "output/review/index.html"),
+  "approval queue items must include review checklist and review board path"
+);
+await access(fromRoot("output", "approvals", "approval-queue.md"));
 const operationsReport = await readJson(fromRoot("output", "operations", "run-report.json"));
 assert(operationsReport.summary.drafts === index.count, "operations report draft count mismatch");
 assert(operationsReport.summary.providerJobs === providerIndex.count, "operations report provider job count mismatch");
 assert(operationsReport.summary.publishPayloads === publishIndex.entries.length, "operations report publish count mismatch");
 assert(operationsReport.summary.publishLedgerEntries === publishLedger.count, "operations report publish ledger count mismatch");
+assert(operationsReport.summary.approvalQueueItems === approvalQueue.count, "operations report approval queue count mismatch");
 await access(fromRoot("output", "operations", "content-calendar.md"));
 
 const results = [];

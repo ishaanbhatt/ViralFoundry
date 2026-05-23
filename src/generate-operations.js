@@ -18,6 +18,7 @@ export async function generateOperations() {
   const providerIndex = await readJson(fromRoot("output", "provider-jobs", "index.json"));
   const publishIndex = await readJson(fromRoot("output", "publish", "index.json"));
   const publishLedger = await readJson(fromRoot("output", "publish-ledger", "index.json"));
+  const approvalQueue = await readJson(fromRoot("output", "approvals", "index.json"));
   await rm(fromRoot("output", "operations"), { recursive: true, force: true });
   await mkdir(fromRoot("output", "operations"), { recursive: true });
 
@@ -47,7 +48,9 @@ export async function generateOperations() {
       providerMode: providerIndex.mode,
       publishPayloads: publishIndex.entries.length,
       publishLedgerEntries: publishLedger.count,
+      approvalQueueItems: approvalQueue.count,
       pendingApprovals: publishLedger.pendingApprovalCount,
+      liveUploadReady: approvalQueue.liveUploadReadyCount,
       reviewBoard: "output/review/index.html"
     },
     calendar,
@@ -55,6 +58,7 @@ export async function generateOperations() {
       "Provider jobs are contract-only dry runs until credentials, polling, storage, and cost ledgers exist.",
       "Publishing remains dry-run until credentials and upload clients are implemented.",
       "Publish ledger entries require human approval before any future live upload attempt.",
+      "Approval queue items are manual review tasks, not live upload permissions.",
       "Audio is a generated guide track until final voiceover is recorded or synthesized.",
       "Human review is still required before public distribution."
     ]
