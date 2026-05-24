@@ -1,5 +1,6 @@
 import { generateDrafts } from "./generate-drafts.js";
 import { generateApprovalQueue } from "./generate-approval-queue.js";
+import { generateBrandKits } from "./generate-brand-kits.js";
 import { generateOperations } from "./generate-operations.js";
 import { generatePublishLedger } from "./generate-publish-ledger.js";
 import { generateProviderJobs } from "./generate-provider-jobs.js";
@@ -7,6 +8,9 @@ import { generateReviewBoard } from "./generate-review.js";
 import { preparePublish } from "./prepare-publish.js";
 import { renderVideos } from "./render-videos.js";
 import { scoreQuality } from "./score-quality.js";
+
+const brandKits = await generateBrandKits();
+console.log(`Brand kits complete: generated ${brandKits.count} local brand kit artifact(s).`);
 
 const packages = await generateDrafts();
 console.log(`Phase 1 complete: generated ${packages.length} draft package(s).`);

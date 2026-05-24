@@ -13,6 +13,7 @@ function isoDate(date) {
 }
 
 export async function generateOperations() {
+  const brandKitIndex = await readJson(fromRoot("output", "brand-kits", "index.json"));
   const draftIndex = await readJson(fromRoot("drafts", "index.json"));
   const qualityIndex = await readJson(fromRoot("output", "quality", "index.json"));
   const providerIndex = await readJson(fromRoot("output", "provider-jobs", "index.json"));
@@ -42,6 +43,7 @@ export async function generateOperations() {
     generatedAt: new Date().toISOString(),
     summary: {
       drafts: draftIndex.count,
+      brandKits: brandKitIndex.count,
       renderedVideos: draftIndex.count,
       averageQualityScore: qualityIndex.averageScore,
       providerJobs: providerIndex.count,
@@ -51,10 +53,12 @@ export async function generateOperations() {
       approvalQueueItems: approvalQueue.count,
       pendingApprovals: publishLedger.pendingApprovalCount,
       liveUploadReady: approvalQueue.liveUploadReadyCount,
-      reviewBoard: "output/review/index.html"
+      reviewBoard: "output/review/index.html",
+      brandKitSummary: "output/brand-kits/brand-kit-summary.md"
     },
     calendar,
     risks: [
+      "Brand kit artifacts are local registry entries until accounts, workspaces, and persistent brand-kit ownership exist.",
       "Provider jobs are contract-only dry runs until credentials, polling, storage, and cost ledgers exist.",
       "Publishing remains dry-run until credentials and upload clients are implemented.",
       "Publish ledger entries require human approval before any future live upload attempt.",

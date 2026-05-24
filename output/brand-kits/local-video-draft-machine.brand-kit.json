@@ -1,0 +1,88 @@
+{
+  "slug": "local-video-draft-machine",
+  "name": "Local Video Draft Machine",
+  "positioning": "A local-first video operations system that proves draft-to-MP4 quality before publishing integrations go live.",
+  "audience": {
+    "primary": "Solo founders, creator-operators, and product teams building repeatable short-form video workflows.",
+    "secondary": "Technical marketers and automation-minded content leads who need local proof before distribution.",
+    "needs": [
+      "Trustworthy local artifacts before platform uploads",
+      "Clear provenance across drafts, renders, approvals, and publishing payloads",
+      "Practical content packages that can be reviewed without source-code spelunking"
+    ]
+  },
+  "voice": {
+    "traits": [
+      "clear",
+      "operator-minded",
+      "confident",
+      "specific"
+    ],
+    "do": [
+      "Use direct claims grounded in generated artifacts.",
+      "Name the workflow stage and next operator action.",
+      "Prefer practical proof over hype."
+    ],
+    "avoid": [
+      "Overpromising live publishing before credentials and approval gates exist.",
+      "Generic creator-economy language without operational detail.",
+      "Claims that imply third-party platform submission in dry-run mode."
+    ]
+  },
+  "visualTokens": {
+    "palette": {
+      "background": "#0f172a",
+      "surface": "#172554",
+      "foreground": "#f8fafc",
+      "muted": "#cbd5e1",
+      "accent": "#38bdf8",
+      "secondary": "#f97316",
+      "success": "#a3e635",
+      "warning": "#facc15"
+    },
+    "spacing": {
+      "safeAreaTop": 180,
+      "safeAreaRight": 120,
+      "safeAreaBottom": 180,
+      "safeAreaLeft": 120
+    },
+    "motion": {
+      "defaultTransitionSeconds": 0.35,
+      "sceneRhythm": "fast hook resolve, steady explain frame, structured proof card, calm final slate"
+    }
+  },
+  "typography": {
+    "primaryFont": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "title": "Bold, high-contrast title treatment sized for vertical mobile viewing.",
+    "body": "Large concise support copy with no more than two lines per scene.",
+    "caption": "Sidecar SRT plus visible in-video text for accessibility and review."
+  },
+  "assets": {
+    "logoPlaceholder": "assets/brand/local-video-draft-machine/logo-placeholder.svg",
+    "wordmarkPlaceholder": "assets/brand/local-video-draft-machine/wordmark-placeholder.svg",
+    "thumbnailFramePlaceholder": "assets/brand/local-video-draft-machine/thumbnail-frame-placeholder.png",
+    "notes": "Placeholders describe intended brand asset slots only; no external asset lookup or generation is performed."
+  },
+  "compliance": {
+    "disclosures": [
+      "Generated artifacts are local dry-run outputs until human approval and platform credentials are added.",
+      "Provider and publish payloads must retain provenance back to draft packages and local renders.",
+      "AI-generated or assisted content should be disclosed where platform policy or user context requires it."
+    ],
+    "blockedClaims": [
+      "Do not claim videos were uploaded or published by the system in dry-run mode.",
+      "Do not imply platform endorsement or affiliation.",
+      "Do not remove human review requirements from public-distribution copy."
+    ]
+  },
+  "provenance": {
+    "source": "content/brand-kits.json",
+    "mode": "local_dry_run",
+    "derivedFrom": [
+      "content/design-system.json",
+      "current local render and publish-prep workflow assumptions"
+    ],
+    "owner": "ViralFoundry local content pipeline",
+    "sourceVersion": "2026-05-phase-10"
+  }
+}

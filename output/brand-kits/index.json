@@ -1,0 +1,15 @@
+{
+  "source": "content/brand-kits.json",
+  "sourceVersion": "2026-05-phase-10",
+  "mode": "local_dry_run",
+  "count": 1,
+  "entries": [
+    {
+      "slug": "local-video-draft-machine",
+      "name": "Local Video Draft Machine",
+      "positioning": "A local-first video operations system that proves draft-to-MP4 quality before publishing integrations go live.",
+      "mode": "local_dry_run",
+      "artifactPath": "output/brand-kits/local-video-draft-machine.brand-kit.json"
+    }
+  ]
+}

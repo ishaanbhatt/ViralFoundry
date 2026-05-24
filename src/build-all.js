@@ -1,6 +1,10 @@
 import { generateDrafts } from "./generate-drafts.js";
+import { generateBrandKits } from "./generate-brand-kits.js";
 import { generateReviewBoard } from "./generate-review.js";
 import { renderVideos } from "./render-videos.js";
+
+const brandKits = await generateBrandKits();
+console.log(`Brand kits complete: generated ${brandKits.count} local brand kit artifact(s).`);
 
 const packages = await generateDrafts();
 console.log(`Phase 1 complete: generated ${packages.length} draft package(s).`);

@@ -8,6 +8,7 @@ The project is intentionally not a public posting bot yet. Today it is a determi
 
 The pipeline starts from `content/briefs.json` and produces:
 
+- Local brand kit registry artifacts under `output/brand-kits/`
 - Complete draft folders under `drafts/<slug>/`
 - Scripts, storyboards, captions, metadata, design briefs, motion plans, audio plans, and platform variants
 - Real local MP4 videos under `output/videos/`
@@ -29,9 +30,11 @@ Use it when you want a repeatable local factory for short-form content ideas, re
 .
 ├── content/
 │   ├── briefs.json              # Input video briefs
+│   ├── brand-kits.json          # Local dry-run brand kit registry input
 │   └── design-system.json       # Visual, motion, audio, and platform rules
 ├── drafts/                      # Generated per-video draft packages
 ├── output/
+│   ├── brand-kits/              # Brand positioning, voice, visual tokens, compliance, and provenance artifacts
 │   ├── videos/                  # Rendered MP4 files
 │   ├── thumbnails/              # Generated thumbnail images
 │   ├── previews/                # Generated preview frames
@@ -80,7 +83,7 @@ Then run the full local pipeline:
 npm run full
 ```
 
-This command generates draft packages, renders MP4s, builds review assets, scores quality, generates dry-run provider contracts, prepares dry-run publish payloads, writes a dry-run publish ledger, creates operations artifacts, and validates the result.
+This command generates local brand-kit artifacts, draft packages, renders MP4s, builds review assets, scores quality, generates dry-run provider contracts, prepares dry-run publish payloads, writes a dry-run publish ledger, creates operations artifacts, and validates the result.
 It also stages manual approval queue items so future upload clients have a human-review boundary to consume.
 
 Expected success output ends with a validation summary similar to:
@@ -90,6 +93,12 @@ Validated 2 draft package(s) and MP4 render(s).
 ```
 
 ## Common Commands
+
+```bash
+npm run brand-kits
+```
+
+Generates local dry-run brand kit artifacts in `output/brand-kits/`.
 
 ```bash
 npm run generate
@@ -155,7 +164,7 @@ Runs the baseline build flow: generate, render, and review.
 npm run validate
 ```
 
-Validates generated packages, videos, thumbnails, previews, manifests, quality reports, provider jobs, publish payloads, publish ledger state, review board output, and operations artifacts.
+Validates generated brand kits, packages, videos, thumbnails, previews, manifests, quality reports, provider jobs, publish payloads, publish ledger state, review board output, and operations artifacts.
 
 ```bash
 npm run full
@@ -189,6 +198,14 @@ Example workflow:
 ## Design System
 
 The visual and production rules live in `content/design-system.json`.
+
+Brand positioning, voice, visual tokens, typography notes, placeholder brand assets, compliance notes, and provenance live in `content/brand-kits.json`. `npm run brand-kits` converts those inputs into:
+
+- `output/brand-kits/index.json`
+- `output/brand-kits/<slug>.brand-kit.json`
+- `output/brand-kits/brand-kit-summary.md`
+
+This is still local dry-run state. Hosted accounts, workspace ownership, persisted brand kits, uploaded brand assets, and permission checks do not exist yet.
 
 Generated packages include concrete design artifacts:
 

@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2026-05-23T17:01:40.170Z",
+  "generatedAt": "2026-05-24T03:06:10.992Z",
   "summary": {
     "drafts": 2,
+    "brandKits": 1,
     "renderedVideos": 2,
     "averageQualityScore": 100,
     "providerJobs": 2,
@@ -11,11 +12,12 @@
     "approvalQueueItems": 5,
     "pendingApprovals": 5,
     "liveUploadReady": 0,
-    "reviewBoard": "output/review/index.html"
+    "reviewBoard": "output/review/index.html",
+    "brandKitSummary": "output/brand-kits/brand-kit-summary.md"
   },
   "calendar": [
     {
-      "date": "2026-05-23",
+      "date": "2026-05-24",
       "slug": "why-local-rendering-changes-the-product-risk",
       "title": "Why Local Rendering Changes the Product Risk",
       "platforms": [
@@ -27,7 +29,7 @@
       "status": "ready_for_final_voiceover"
     },
     {
-      "date": "2026-05-25",
+      "date": "2026-05-26",
       "slug": "the-minimum-useful-video-factory",
       "title": "The Minimum Useful Video Factory",
       "platforms": [
@@ -39,6 +41,7 @@
     }
   ],
   "risks": [
+    "Brand kit artifacts are local registry entries until accounts, workspaces, and persistent brand-kit ownership exist.",
     "Provider jobs are contract-only dry runs until credentials, polling, storage, and cost ledgers exist.",
     "Publishing remains dry-run until credentials and upload clients are implemented.",
     "Publish ledger entries require human approval before any future live upload attempt.",

@@ -1,4 +1,5 @@
 import { access, readdir, stat } from "node:fs/promises";
+import path from "node:path";
 import { fromRoot, readJson } from "./lib/fs-utils.js";
 
 const requiredPackageKeys = [
@@ -19,6 +20,15 @@ const requiredPackageKeys = [
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
+}
+
+function assertRelativePathInside(value, prefix, message) {
+  assert(typeof value === "string", `${message}: path must be a string`);
+  assert(!path.isAbsolute(value), `${message}: path must be relative`);
+  const normalized = path.normalize(value);
+  assert(!normalized.startsWith(".."), `${message}: path must stay inside project root`);
+  assert(normalized === value, `${message}: path must be normalized`);
+  assert(normalized.startsWith(`${prefix}/`), `${message}: path must be under ${prefix}`);
 }
 
 async function validatePackage(item) {
@@ -103,6 +113,32 @@ async function validatePackage(item) {
 const index = await readJson(fromRoot("drafts", "index.json"));
 assert(index.count === index.packages.length, "draft index count mismatch");
 await access(fromRoot("content", "design-system.json"));
+const brandKitInput = await readJson(fromRoot("content", "brand-kits.json"));
+assert(Array.isArray(brandKitInput.brandKits) && brandKitInput.brandKits.length > 0, "brand kit input is empty");
+const brandKitIndex = await readJson(fromRoot("output", "brand-kits", "index.json"));
+assert(brandKitIndex.mode === "local_dry_run", "brand kits must stay in local dry-run mode");
+assert(brandKitIndex.count === brandKitIndex.entries.length, "brand kit index count mismatch");
+assert(brandKitIndex.count === brandKitInput.brandKits.length, "brand kit output count mismatch");
+assert(
+  brandKitIndex.entries.every((entry) => {
+    assertRelativePathInside(entry.artifactPath, "output/brand-kits", `${entry.slug}: brand kit artifact`);
+    return entry.artifactPath.endsWith(".brand-kit.json");
+  }),
+  "brand kit entries must point to JSON artifacts"
+);
+await access(fromRoot("output", "brand-kits", "brand-kit-summary.md"));
+for (const entry of brandKitIndex.entries) {
+  const brandKit = await readJson(fromRoot(entry.artifactPath));
+  assert(brandKit.name === entry.name, `${entry.slug}: brand kit artifact name mismatch`);
+  assert(brandKit.positioning, `${entry.slug}: missing brand positioning`);
+  assert(brandKit.audience?.primary, `${entry.slug}: missing primary audience`);
+  assert(brandKit.voice?.traits?.length > 0, `${entry.slug}: missing voice traits`);
+  assert(brandKit.visualTokens?.palette?.accent, `${entry.slug}: missing accent color`);
+  assert(brandKit.typography?.primaryFont, `${entry.slug}: missing primary font`);
+  assert(brandKit.assets?.logoPlaceholder, `${entry.slug}: missing logo placeholder`);
+  assert(brandKit.compliance?.disclosures?.length > 0, `${entry.slug}: missing compliance disclosures`);
+  assert(brandKit.provenance?.mode === "local_dry_run", `${entry.slug}: unclear brand kit provenance`);
+}
 await access(fromRoot("output", "review", "index.html"));
 const qualityIndex = await readJson(fromRoot("output", "quality", "index.json"));
 assert(qualityIndex.count === index.count, "quality index count mismatch");
@@ -153,6 +189,7 @@ assert(
 await access(fromRoot("output", "approvals", "approval-queue.md"));
 const operationsReport = await readJson(fromRoot("output", "operations", "run-report.json"));
 assert(operationsReport.summary.drafts === index.count, "operations report draft count mismatch");
+assert(operationsReport.summary.brandKits === brandKitIndex.count, "operations report brand kit count mismatch");
 assert(operationsReport.summary.providerJobs === providerIndex.count, "operations report provider job count mismatch");
 assert(operationsReport.summary.publishPayloads === publishIndex.entries.length, "operations report publish count mismatch");
 assert(operationsReport.summary.publishLedgerEntries === publishLedger.count, "operations report publish ledger count mismatch");

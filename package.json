@@ -6,6 +6,7 @@
   "description": "Generate complete draft packages and render local MP4 videos from them.",
   "scripts": {
     "generate": "node src/generate-drafts.js",
+    "brand-kits": "node src/generate-brand-kits.js",
     "render": "node src/render-videos.js",
     "review": "node src/generate-review.js",
     "quality": "node src/score-quality.js",

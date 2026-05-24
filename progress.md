@@ -62,6 +62,13 @@ Goal: keep building the local video draft machine until the major design aspects
 - [x] Keep live upload disabled until explicit human approval, platform credentials, and live upload clients exist.
 - [x] Extend validation and operations reporting to cover approval queue artifacts.
 
+## Phase 10: Brand Kit Registry
+
+- [x] Add a local dry-run brand kit registry input with positioning, audience, voice, visual tokens, typography, placeholder assets, compliance notes, and provenance.
+- [x] Generate brand kit artifacts under `output/brand-kits/` for operator review.
+- [x] Keep brand kits local until hosted accounts, workspace ownership, uploaded assets, and permission checks exist.
+- [x] Extend build, validation, operations reporting, and documentation to cover brand kit artifacts.
+
 ## Current Validation Gates
 
 - [x] `npm run build`
