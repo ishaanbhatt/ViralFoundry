@@ -15,6 +15,7 @@
     "publish:ledger": "node src/generate-publish-ledger.js",
     "approval": "node src/generate-approval-queue.js",
     "operations": "node src/generate-operations.js",
+    "workspace": "node src/generate-workspace-jobs.js",
     "build": "node src/build-all.js",
     "full": "node src/full-pipeline.js && node src/validate-output.js",
     "validate": "node src/validate-output.js"

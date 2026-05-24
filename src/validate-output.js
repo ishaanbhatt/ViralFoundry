@@ -187,6 +187,46 @@ assert(
   "approval queue items must include review checklist and review board path"
 );
 await access(fromRoot("output", "approvals", "approval-queue.md"));
+const workspaceInput = await readJson(fromRoot("content", "workspace.json"));
+assert(workspaceInput.provenance?.mode === "local_dry_run", "workspace input must stay in local dry-run mode");
+assert(workspaceInput.plan?.livePublishingEnabled === false, "workspace must not enable live publishing");
+assert(workspaceInput.permissions?.canPublishLive === false, "workspace must not allow live platform publishing");
+const workspaceIndex = await readJson(fromRoot("output", "workspace", "index.json"));
+assert(workspaceIndex.mode === "dry_run", "workspace registry must stay in dry-run mode");
+assert(workspaceIndex.workspace.id === workspaceInput.id, "workspace registry id mismatch");
+assert(workspaceIndex.workspace.defaultBrandKitSlug === workspaceInput.defaultBrandKitSlug, "workspace brand kit mismatch");
+assert(workspaceIndex.workspace.plan.livePublishingEnabled === false, "workspace registry must not enable live publishing");
+assert(workspaceIndex.counts.jobs === index.count, "workspace job count mismatch");
+assert(workspaceIndex.jobs.length === workspaceIndex.counts.jobs, "workspace index job count mismatch");
+assert(workspaceIndex.counts.publishPayloads === publishIndex.entries.length, "workspace publish payload count mismatch");
+assert(workspaceIndex.counts.ledgerEntries === publishLedger.count, "workspace ledger count mismatch");
+assert(workspaceIndex.counts.approvalItems === approvalQueue.count, "workspace approval count mismatch");
+assert(workspaceIndex.counts.blockedJobs === workspaceIndex.jobs.length, "workspace jobs should remain blocked in dry-run mode");
+await access(fromRoot("output", "workspace", "workspace-summary.md"));
+for (const job of workspaceIndex.jobs) {
+  assertRelativePathInside(job.jobPath, "output/workspace/jobs", `${job.slug}: workspace job`);
+  const workspaceJob = await readJson(fromRoot(job.jobPath));
+  assert(workspaceJob.workspace.id === workspaceInput.id, `${job.slug}: workspace job id mismatch`);
+  assert(workspaceJob.brandKit.slug === workspaceInput.defaultBrandKitSlug, `${job.slug}: workspace brand kit mismatch`);
+  assert(workspaceJob.currentStatus === "awaiting_human_approval", `${job.slug}: workspace job status mismatch`);
+  assert(workspaceJob.paths.packagePath === `drafts/${job.slug}/package.json`, `${job.slug}: workspace package path mismatch`);
+  assertRelativePathInside(workspaceJob.paths.videoPath, "output/videos", `${job.slug}: workspace video`);
+  assertRelativePathInside(workspaceJob.paths.thumbnailPath, "output/thumbnails", `${job.slug}: workspace thumbnail`);
+  assertRelativePathInside(workspaceJob.paths.previewFramePath, "output/previews", `${job.slug}: workspace preview`);
+  assert(workspaceJob.paths.videoPath.endsWith(".mp4"), `${job.slug}: workspace job missing MP4 path`);
+  assert(workspaceJob.paths.thumbnailPath.endsWith(".png"), `${job.slug}: workspace job missing thumbnail path`);
+  assert(workspaceJob.paths.previewFramePath.endsWith(".png"), `${job.slug}: workspace job missing preview path`);
+  assert(workspaceJob.quality.score >= 90, `${job.slug}: workspace job quality below threshold`);
+  assert(workspaceJob.providerJob.submitted === false, `${job.slug}: workspace provider job must stay dry-run`);
+  assert(workspaceJob.providerJob.billable === false, `${job.slug}: workspace provider job must not be billable`);
+  assert(workspaceJob.publishing.payloads.length === job.publishPayloadPaths.length, `${job.slug}: workspace payload count mismatch`);
+  assert(workspaceJob.publishing.ledgerIds.length === job.ledgerIds.length, `${job.slug}: workspace ledger count mismatch`);
+  assert(workspaceJob.publishing.approvalItemIds.length === job.approvalItemIds.length, `${job.slug}: workspace approval count mismatch`);
+  assert(
+    workspaceJob.publishing.approvalItems.every((item) => item.canProceedToLiveUpload === false),
+    `${job.slug}: workspace job must not mark uploads ready`
+  );
+}
 const operationsReport = await readJson(fromRoot("output", "operations", "run-report.json"));
 assert(operationsReport.summary.drafts === index.count, "operations report draft count mismatch");
 assert(operationsReport.summary.brandKits === brandKitIndex.count, "operations report brand kit count mismatch");
@@ -194,6 +234,11 @@ assert(operationsReport.summary.providerJobs === providerIndex.count, "operation
 assert(operationsReport.summary.publishPayloads === publishIndex.entries.length, "operations report publish count mismatch");
 assert(operationsReport.summary.publishLedgerEntries === publishLedger.count, "operations report publish ledger count mismatch");
 assert(operationsReport.summary.approvalQueueItems === approvalQueue.count, "operations report approval queue count mismatch");
+assert(operationsReport.summary.workspaceJobs === workspaceIndex.counts.jobs, "operations report workspace job count mismatch");
+assert(
+  operationsReport.calendar.every((entry) => entry.status === "awaiting_human_approval" && entry.blockers.includes("human_approval")),
+  "operations calendar must reflect workspace approval blockers"
+);
 await access(fromRoot("output", "operations", "content-calendar.md"));
 
 const results = [];

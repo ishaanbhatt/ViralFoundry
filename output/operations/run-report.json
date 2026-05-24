@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T03:06:10.992Z",
+  "generatedAt": "2026-05-24T04:12:31.777Z",
   "summary": {
     "drafts": 2,
     "brandKits": 1,
@@ -10,10 +10,12 @@
     "publishPayloads": 5,
     "publishLedgerEntries": 5,
     "approvalQueueItems": 5,
+    "workspaceJobs": 2,
     "pendingApprovals": 5,
     "liveUploadReady": 0,
     "reviewBoard": "output/review/index.html",
-    "brandKitSummary": "output/brand-kits/brand-kit-summary.md"
+    "brandKitSummary": "output/brand-kits/brand-kit-summary.md",
+    "workspaceSummary": "output/workspace/workspace-summary.md"
   },
   "calendar": [
     {
@@ -26,7 +28,14 @@
         "LinkedIn"
       ],
       "qualityScore": 100,
-      "status": "ready_for_final_voiceover"
+      "status": "awaiting_human_approval",
+      "nextOperatorAction": "Review the local MP4, thumbnail, captions, and platform payloads, then record explicit human approval.",
+      "blockers": [
+        "final_voiceover",
+        "brand_pack",
+        "platform_credentials",
+        "human_approval"
+      ]
     },
     {
       "date": "2026-05-26",
@@ -37,11 +46,19 @@
         "Instagram Reels"
       ],
       "qualityScore": 100,
-      "status": "ready_for_final_voiceover"
+      "status": "awaiting_human_approval",
+      "nextOperatorAction": "Review the local MP4, thumbnail, captions, and platform payloads, then record explicit human approval.",
+      "blockers": [
+        "final_voiceover",
+        "brand_pack",
+        "platform_credentials",
+        "human_approval"
+      ]
     }
   ],
   "risks": [
     "Brand kit artifacts are local registry entries until accounts, workspaces, and persistent brand-kit ownership exist.",
+    "Workspace job artifacts are local dry-run records until a database, object storage, auth, and account-scoped permissions exist.",
     "Provider jobs are contract-only dry runs until credentials, polling, storage, and cost ledgers exist.",
     "Publishing remains dry-run until credentials and upload clients are implemented.",
     "Publish ledger entries require human approval before any future live upload attempt.",

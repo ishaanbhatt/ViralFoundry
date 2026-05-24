@@ -25,7 +25,7 @@ Decision principle: build the orchestration layer, not the entire video engine. 
 
 ## Near-Term Plan
 
-Continue the local product roadmap in `progress.md`, then add provider abstraction and publish controls only after quality gates are in place. The current integration foundation uses a local dry-run brand kit registry, dry-run provider contracts, dry-run publish payloads, a publish ledger, and a manual approval queue before any paid API calls or live uploads are added.
+Continue the local product roadmap in `progress.md`, then add provider abstraction and publish controls only after quality gates are in place. The current integration foundation uses a local dry-run brand kit registry, workspace/job registry, dry-run provider contracts, dry-run publish payloads, a publish ledger, and a manual approval queue before any paid API calls or live uploads are added.
 
 ## Future Hosting And Revenue Plan
 
@@ -82,6 +82,8 @@ Start with these core entities:
 Each generated artifact should have provenance: local renderer, AI provider, human-produced asset, upload target, provider job ID, license metadata, and cost metadata when available.
 
 Local brand kit artifacts now act as the bridge between the local engine and the hosted `brand_kits` entity. They are not account-owned yet; the hosted version needs workspace-scoped ownership, uploaded asset storage, permission checks, audit events, and version history before customers can safely manage multiple brands.
+
+Local workspace job artifacts now act as the bridge between the local engine and hosted `workspaces`, `generation_jobs`, and `draft_packages`. They are reviewable local records, not real account state; the hosted version needs authenticated users, workspace memberships, durable job rows, object-storage asset references, billing entitlements, and audit events before customers can safely run jobs.
 
 ### Product Milestones
 

@@ -1,0 +1,193 @@
+{
+  "generatedAt": "2026-05-24T04:12:31.775Z",
+  "id": "viral-foundry-local:the-minimum-useful-video-factory",
+  "slug": "the-minimum-useful-video-factory",
+  "title": "The Minimum Useful Video Factory",
+  "workspace": {
+    "id": "viral-foundry-local",
+    "name": "ViralFoundry Local Workspace",
+    "plan": {
+      "tier": "local_builder",
+      "mode": "dry_run",
+      "livePublishingEnabled": false
+    },
+    "owner": {
+      "operatorId": "local-operator-placeholder",
+      "displayName": "Local Operator",
+      "contact": "not_configured"
+    }
+  },
+  "brandKit": {
+    "slug": "local-video-draft-machine",
+    "name": "Local Video Draft Machine",
+    "artifactPath": "output/brand-kits/local-video-draft-machine.brand-kit.json"
+  },
+  "currentStatus": "awaiting_human_approval",
+  "statusSignals": {
+    "qualityRecommendation": "approved_for_publish_prep",
+    "providerStatus": "contract_ready",
+    "providerSubmitted": false,
+    "publishStatuses": [
+      "asset_ready_credentials_needed"
+    ],
+    "ledgerUploadStatuses": [
+      "not_submitted"
+    ],
+    "approvalStatuses": [
+      "awaiting_human_approval"
+    ]
+  },
+  "package": {
+    "title": "The Minimum Useful Video Factory",
+    "objective": "Define the smallest pipeline that creates reviewable drafts and playable videos.",
+    "durationSeconds": 42,
+    "platforms": [
+      "YouTube Shorts",
+      "Instagram Reels"
+    ]
+  },
+  "paths": {
+    "packagePath": "drafts/the-minimum-useful-video-factory/package.json",
+    "videoPath": "output/videos/the-minimum-useful-video-factory.mp4",
+    "thumbnailPath": "output/thumbnails/the-minimum-useful-video-factory.png",
+    "previewFramePath": "output/previews/the-minimum-useful-video-factory.png",
+    "manifestPath": "output/manifests/the-minimum-useful-video-factory.render.json",
+    "qualityReportPath": "output/quality/the-minimum-useful-video-factory.quality.json",
+    "providerJobPath": "output/provider-jobs/the-minimum-useful-video-factory.provider-job.json",
+    "publishPayloadPaths": [
+      "output/publish/the-minimum-useful-video-factory/youtube-shorts.publish.json",
+      "output/publish/the-minimum-useful-video-factory/instagram-reels.publish.json"
+    ],
+    "reviewBoardPath": "output/review/index.html"
+  },
+  "quality": {
+    "score": 100,
+    "recommendation": "approved_for_publish_prep",
+    "reportPath": "output/quality/the-minimum-useful-video-factory.quality.json"
+  },
+  "providerJob": {
+    "provider": {
+      "id": "dry-run-video-provider",
+      "mode": "dry_run",
+      "displayName": "Dry Run Video Provider",
+      "capabilities": [
+        "text_to_video",
+        "image_reference",
+        "caption_reference",
+        "local_render_fallback"
+      ]
+    },
+    "status": "contract_ready",
+    "submitted": false,
+    "billable": false,
+    "cost": {
+      "estimatedUsd": 0,
+      "currency": "USD",
+      "billingStatus": "dry_run_not_billable"
+    },
+    "path": "output/provider-jobs/the-minimum-useful-video-factory.provider-job.json"
+  },
+  "publishing": {
+    "payloads": [
+      {
+        "platform": "YouTube Shorts",
+        "status": "asset_ready_credentials_needed",
+        "path": "output/publish/the-minimum-useful-video-factory/youtube-shorts.publish.json",
+        "idempotencyKey": "the-minimum-useful-video-factory-youtube-shorts",
+        "requiredCredential": "YOUTUBE_SHORTS_ACCESS_TOKEN",
+        "blockers": [
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      },
+      {
+        "platform": "Instagram Reels",
+        "status": "asset_ready_credentials_needed",
+        "path": "output/publish/the-minimum-useful-video-factory/instagram-reels.publish.json",
+        "idempotencyKey": "the-minimum-useful-video-factory-instagram-reels",
+        "requiredCredential": "INSTAGRAM_REELS_ACCESS_TOKEN",
+        "blockers": [
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      }
+    ],
+    "ledgerIds": [
+      "the-minimum-useful-video-factory-youtube-shorts",
+      "the-minimum-useful-video-factory-instagram-reels"
+    ],
+    "ledgerEntries": [
+      {
+        "id": "the-minimum-useful-video-factory-youtube-shorts",
+        "platform": "YouTube Shorts",
+        "uploadStatus": "not_submitted",
+        "approvalStatus": "human_approval_required",
+        "payloadPath": "output/publish/the-minimum-useful-video-factory/youtube-shorts.publish.json",
+        "requiredCredential": "YOUTUBE_SHORTS_ACCESS_TOKEN"
+      },
+      {
+        "id": "the-minimum-useful-video-factory-instagram-reels",
+        "platform": "Instagram Reels",
+        "uploadStatus": "not_submitted",
+        "approvalStatus": "human_approval_required",
+        "payloadPath": "output/publish/the-minimum-useful-video-factory/instagram-reels.publish.json",
+        "requiredCredential": "INSTAGRAM_REELS_ACCESS_TOKEN"
+      }
+    ],
+    "approvalItemIds": [
+      "the-minimum-useful-video-factory-youtube-shorts",
+      "the-minimum-useful-video-factory-instagram-reels"
+    ],
+    "approvalItems": [
+      {
+        "id": "the-minimum-useful-video-factory-youtube-shorts",
+        "platform": "YouTube Shorts",
+        "status": "awaiting_human_approval",
+        "priority": "blocked",
+        "canProceedToLiveUpload": false
+      },
+      {
+        "id": "the-minimum-useful-video-factory-instagram-reels",
+        "platform": "Instagram Reels",
+        "status": "awaiting_human_approval",
+        "priority": "blocked",
+        "canProceedToLiveUpload": false
+      }
+    ]
+  },
+  "operations": null,
+  "operator": {
+    "blockers": [
+      "final_voiceover",
+      "brand_pack",
+      "platform_credentials",
+      "human_approval"
+    ],
+    "nextAction": "Review the local MP4, thumbnail, captions, and platform payloads, then record explicit human approval.",
+    "reviewChecklist": [
+      "Watch the local MP4 in the review board.",
+      "Confirm title, caption, and thumbnail match the target platform.",
+      "Check for copyright, claims, brand-safety, and factual accuracy issues.",
+      "Confirm final voiceover is ready before live publishing.",
+      "Confirm platform credentials and account destination before upload.",
+      "Resolve publish blockers: final_voiceover, brand_pack, platform_credentials.",
+      "Clear approval blockers: human_approval, final_voiceover, brand_pack, platform_credentials."
+    ]
+  },
+  "provenance": {
+    "mode": "local_dry_run",
+    "externalCalls": false,
+    "sources": [
+      "content/workspace.json",
+      "drafts/index.json",
+      "output/brand-kits/index.json",
+      "output/quality/index.json",
+      "output/provider-jobs/index.json",
+      "output/publish/index.json",
+      "output/publish-ledger/index.json",
+      "output/approvals/index.json"
+    ]
+  }
+}

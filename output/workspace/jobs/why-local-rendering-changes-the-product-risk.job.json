@@ -1,0 +1,224 @@
+{
+  "generatedAt": "2026-05-24T04:12:31.774Z",
+  "id": "viral-foundry-local:why-local-rendering-changes-the-product-risk",
+  "slug": "why-local-rendering-changes-the-product-risk",
+  "title": "Why Local Rendering Changes the Product Risk",
+  "workspace": {
+    "id": "viral-foundry-local",
+    "name": "ViralFoundry Local Workspace",
+    "plan": {
+      "tier": "local_builder",
+      "mode": "dry_run",
+      "livePublishingEnabled": false
+    },
+    "owner": {
+      "operatorId": "local-operator-placeholder",
+      "displayName": "Local Operator",
+      "contact": "not_configured"
+    }
+  },
+  "brandKit": {
+    "slug": "local-video-draft-machine",
+    "name": "Local Video Draft Machine",
+    "artifactPath": "output/brand-kits/local-video-draft-machine.brand-kit.json"
+  },
+  "currentStatus": "awaiting_human_approval",
+  "statusSignals": {
+    "qualityRecommendation": "approved_for_publish_prep",
+    "providerStatus": "contract_ready",
+    "providerSubmitted": false,
+    "publishStatuses": [
+      "asset_ready_credentials_needed"
+    ],
+    "ledgerUploadStatuses": [
+      "not_submitted"
+    ],
+    "approvalStatuses": [
+      "awaiting_human_approval"
+    ]
+  },
+  "package": {
+    "title": "Why Local Rendering Changes the Product Risk",
+    "objective": "Show that local MP4 generation turns publishing into an integration problem instead of a product problem.",
+    "durationSeconds": 36,
+    "platforms": [
+      "YouTube Shorts",
+      "TikTok",
+      "LinkedIn"
+    ]
+  },
+  "paths": {
+    "packagePath": "drafts/why-local-rendering-changes-the-product-risk/package.json",
+    "videoPath": "output/videos/why-local-rendering-changes-the-product-risk.mp4",
+    "thumbnailPath": "output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+    "previewFramePath": "output/previews/why-local-rendering-changes-the-product-risk.png",
+    "manifestPath": "output/manifests/why-local-rendering-changes-the-product-risk.render.json",
+    "qualityReportPath": "output/quality/why-local-rendering-changes-the-product-risk.quality.json",
+    "providerJobPath": "output/provider-jobs/why-local-rendering-changes-the-product-risk.provider-job.json",
+    "publishPayloadPaths": [
+      "output/publish/why-local-rendering-changes-the-product-risk/youtube-shorts.publish.json",
+      "output/publish/why-local-rendering-changes-the-product-risk/tiktok.publish.json",
+      "output/publish/why-local-rendering-changes-the-product-risk/linkedin.publish.json"
+    ],
+    "reviewBoardPath": "output/review/index.html"
+  },
+  "quality": {
+    "score": 100,
+    "recommendation": "approved_for_publish_prep",
+    "reportPath": "output/quality/why-local-rendering-changes-the-product-risk.quality.json"
+  },
+  "providerJob": {
+    "provider": {
+      "id": "dry-run-video-provider",
+      "mode": "dry_run",
+      "displayName": "Dry Run Video Provider",
+      "capabilities": [
+        "text_to_video",
+        "image_reference",
+        "caption_reference",
+        "local_render_fallback"
+      ]
+    },
+    "status": "contract_ready",
+    "submitted": false,
+    "billable": false,
+    "cost": {
+      "estimatedUsd": 0,
+      "currency": "USD",
+      "billingStatus": "dry_run_not_billable"
+    },
+    "path": "output/provider-jobs/why-local-rendering-changes-the-product-risk.provider-job.json"
+  },
+  "publishing": {
+    "payloads": [
+      {
+        "platform": "YouTube Shorts",
+        "status": "asset_ready_credentials_needed",
+        "path": "output/publish/why-local-rendering-changes-the-product-risk/youtube-shorts.publish.json",
+        "idempotencyKey": "why-local-rendering-changes-the-product-risk-youtube-shorts",
+        "requiredCredential": "YOUTUBE_SHORTS_ACCESS_TOKEN",
+        "blockers": [
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      },
+      {
+        "platform": "TikTok",
+        "status": "asset_ready_credentials_needed",
+        "path": "output/publish/why-local-rendering-changes-the-product-risk/tiktok.publish.json",
+        "idempotencyKey": "why-local-rendering-changes-the-product-risk-tiktok",
+        "requiredCredential": "TIKTOK_ACCESS_TOKEN",
+        "blockers": [
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      },
+      {
+        "platform": "LinkedIn",
+        "status": "asset_ready_credentials_needed",
+        "path": "output/publish/why-local-rendering-changes-the-product-risk/linkedin.publish.json",
+        "idempotencyKey": "why-local-rendering-changes-the-product-risk-linkedin",
+        "requiredCredential": "LINKEDIN_ACCESS_TOKEN",
+        "blockers": [
+          "final_voiceover",
+          "brand_pack",
+          "platform_credentials"
+        ]
+      }
+    ],
+    "ledgerIds": [
+      "why-local-rendering-changes-the-product-risk-youtube-shorts",
+      "why-local-rendering-changes-the-product-risk-tiktok",
+      "why-local-rendering-changes-the-product-risk-linkedin"
+    ],
+    "ledgerEntries": [
+      {
+        "id": "why-local-rendering-changes-the-product-risk-youtube-shorts",
+        "platform": "YouTube Shorts",
+        "uploadStatus": "not_submitted",
+        "approvalStatus": "human_approval_required",
+        "payloadPath": "output/publish/why-local-rendering-changes-the-product-risk/youtube-shorts.publish.json",
+        "requiredCredential": "YOUTUBE_SHORTS_ACCESS_TOKEN"
+      },
+      {
+        "id": "why-local-rendering-changes-the-product-risk-tiktok",
+        "platform": "TikTok",
+        "uploadStatus": "not_submitted",
+        "approvalStatus": "human_approval_required",
+        "payloadPath": "output/publish/why-local-rendering-changes-the-product-risk/tiktok.publish.json",
+        "requiredCredential": "TIKTOK_ACCESS_TOKEN"
+      },
+      {
+        "id": "why-local-rendering-changes-the-product-risk-linkedin",
+        "platform": "LinkedIn",
+        "uploadStatus": "not_submitted",
+        "approvalStatus": "human_approval_required",
+        "payloadPath": "output/publish/why-local-rendering-changes-the-product-risk/linkedin.publish.json",
+        "requiredCredential": "LINKEDIN_ACCESS_TOKEN"
+      }
+    ],
+    "approvalItemIds": [
+      "why-local-rendering-changes-the-product-risk-youtube-shorts",
+      "why-local-rendering-changes-the-product-risk-tiktok",
+      "why-local-rendering-changes-the-product-risk-linkedin"
+    ],
+    "approvalItems": [
+      {
+        "id": "why-local-rendering-changes-the-product-risk-youtube-shorts",
+        "platform": "YouTube Shorts",
+        "status": "awaiting_human_approval",
+        "priority": "blocked",
+        "canProceedToLiveUpload": false
+      },
+      {
+        "id": "why-local-rendering-changes-the-product-risk-tiktok",
+        "platform": "TikTok",
+        "status": "awaiting_human_approval",
+        "priority": "blocked",
+        "canProceedToLiveUpload": false
+      },
+      {
+        "id": "why-local-rendering-changes-the-product-risk-linkedin",
+        "platform": "LinkedIn",
+        "status": "awaiting_human_approval",
+        "priority": "blocked",
+        "canProceedToLiveUpload": false
+      }
+    ]
+  },
+  "operations": null,
+  "operator": {
+    "blockers": [
+      "final_voiceover",
+      "brand_pack",
+      "platform_credentials",
+      "human_approval"
+    ],
+    "nextAction": "Review the local MP4, thumbnail, captions, and platform payloads, then record explicit human approval.",
+    "reviewChecklist": [
+      "Watch the local MP4 in the review board.",
+      "Confirm title, caption, and thumbnail match the target platform.",
+      "Check for copyright, claims, brand-safety, and factual accuracy issues.",
+      "Confirm final voiceover is ready before live publishing.",
+      "Confirm platform credentials and account destination before upload.",
+      "Resolve publish blockers: final_voiceover, brand_pack, platform_credentials.",
+      "Clear approval blockers: human_approval, final_voiceover, brand_pack, platform_credentials."
+    ]
+  },
+  "provenance": {
+    "mode": "local_dry_run",
+    "externalCalls": false,
+    "sources": [
+      "content/workspace.json",
+      "drafts/index.json",
+      "output/brand-kits/index.json",
+      "output/quality/index.json",
+      "output/provider-jobs/index.json",
+      "output/publish/index.json",
+      "output/publish-ledger/index.json",
+      "output/approvals/index.json"
+    ]
+  }
+}

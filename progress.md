@@ -69,6 +69,13 @@ Goal: keep building the local video draft machine until the major design aspects
 - [x] Keep brand kits local until hosted accounts, workspace ownership, uploaded assets, and permission checks exist.
 - [x] Extend build, validation, operations reporting, and documentation to cover brand kit artifacts.
 
+## Phase 11: Workspace Job Registry
+
+- [x] Add a local dry-run workspace input with owner, plan, permission, entitlement, default brand kit, and provenance placeholders.
+- [x] Generate one workspace job record per draft package that links package, render, quality, provider, publish, ledger, approval, blocker, and next-action state.
+- [x] Keep workspace jobs local until authenticated accounts, durable permissions, object storage, billing, and live upload credentials exist.
+- [x] Extend full pipeline, validation, operations reporting, and documentation to cover workspace job artifacts.
+
 ## Current Validation Gates
 
 - [x] `npm run build`

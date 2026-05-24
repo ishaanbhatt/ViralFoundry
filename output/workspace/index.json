@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-05-24T04:12:31.775Z",
+  "mode": "dry_run",
+  "workspace": {
+    "id": "viral-foundry-local",
+    "name": "ViralFoundry Local Workspace",
+    "owner": {
+      "operatorId": "local-operator-placeholder",
+      "displayName": "Local Operator",
+      "contact": "not_configured"
+    },
+    "defaultBrandKitSlug": "local-video-draft-machine",
+    "defaultBrandKitPath": "output/brand-kits/local-video-draft-machine.brand-kit.json",
+    "plan": {
+      "tier": "local_builder",
+      "mode": "dry_run",
+      "livePublishingEnabled": false
+    },
+    "permissions": {
+      "canGenerateDrafts": true,
+      "canRenderLocalVideos": true,
+      "canCreateProviderContracts": true,
+      "canPreparePublishPayloads": true,
+      "canApproveLiveUpload": false,
+      "canPublishLive": false
+    },
+    "entitlements": {
+      "providerJobs": "dry_run_only",
+      "publishPayloads": "dry_run_only",
+      "approvalQueue": "manual_review_required",
+      "workspaceRegistry": "local_only"
+    }
+  },
+  "counts": {
+    "jobs": 2,
+    "publishPayloads": 5,
+    "ledgerEntries": 5,
+    "approvalItems": 5,
+    "blockedJobs": 2
+  },
+  "jobs": [
+    {
+      "slug": "why-local-rendering-changes-the-product-risk",
+      "title": "Why Local Rendering Changes the Product Risk",
+      "currentStatus": "awaiting_human_approval",
+      "qualityScore": 100,
+      "jobPath": "output/workspace/jobs/why-local-rendering-changes-the-product-risk.job.json",
+      "packagePath": "drafts/why-local-rendering-changes-the-product-risk/package.json",
+      "videoPath": "output/videos/why-local-rendering-changes-the-product-risk.mp4",
+      "thumbnailPath": "output/thumbnails/why-local-rendering-changes-the-product-risk.png",
+      "previewFramePath": "output/previews/why-local-rendering-changes-the-product-risk.png",
+      "qualityReportPath": "output/quality/why-local-rendering-changes-the-product-risk.quality.json",
+      "providerJobPath": "output/provider-jobs/why-local-rendering-changes-the-product-risk.provider-job.json",
+      "publishPayloadPaths": [
+        "output/publish/why-local-rendering-changes-the-product-risk/youtube-shorts.publish.json",
+        "output/publish/why-local-rendering-changes-the-product-risk/tiktok.publish.json",
+        "output/publish/why-local-rendering-changes-the-product-risk/linkedin.publish.json"
+      ],
+      "ledgerIds": [
+        "why-local-rendering-changes-the-product-risk-youtube-shorts",
+        "why-local-rendering-changes-the-product-risk-tiktok",
+        "why-local-rendering-changes-the-product-risk-linkedin"
+      ],
+      "approvalItemIds": [
+        "why-local-rendering-changes-the-product-risk-youtube-shorts",
+        "why-local-rendering-changes-the-product-risk-tiktok",
+        "why-local-rendering-changes-the-product-risk-linkedin"
+      ],
+      "blockers": [
+        "final_voiceover",
+        "brand_pack",
+        "platform_credentials",
+        "human_approval"
+      ],
+      "nextOperatorAction": "Review the local MP4, thumbnail, captions, and platform payloads, then record explicit human approval."
+    },
+    {
+      "slug": "the-minimum-useful-video-factory",
+      "title": "The Minimum Useful Video Factory",
+      "currentStatus": "awaiting_human_approval",
+      "qualityScore": 100,
+      "jobPath": "output/workspace/jobs/the-minimum-useful-video-factory.job.json",
+      "packagePath": "drafts/the-minimum-useful-video-factory/package.json",
+      "videoPath": "output/videos/the-minimum-useful-video-factory.mp4",
+      "thumbnailPath": "output/thumbnails/the-minimum-useful-video-factory.png",
+      "previewFramePath": "output/previews/the-minimum-useful-video-factory.png",
+      "qualityReportPath": "output/quality/the-minimum-useful-video-factory.quality.json",
+      "providerJobPath": "output/provider-jobs/the-minimum-useful-video-factory.provider-job.json",
+      "publishPayloadPaths": [
+        "output/publish/the-minimum-useful-video-factory/youtube-shorts.publish.json",
+        "output/publish/the-minimum-useful-video-factory/instagram-reels.publish.json"
+      ],
+      "ledgerIds": [
+        "the-minimum-useful-video-factory-youtube-shorts",
+        "the-minimum-useful-video-factory-instagram-reels"
+      ],
+      "approvalItemIds": [
+        "the-minimum-useful-video-factory-youtube-shorts",
+        "the-minimum-useful-video-factory-instagram-reels"
+      ],
+      "blockers": [
+        "final_voiceover",
+        "brand_pack",
+        "platform_credentials",
+        "human_approval"
+      ],
+      "nextOperatorAction": "Review the local MP4, thumbnail, captions, and platform payloads, then record explicit human approval."
+    }
+  ],
+  "provenance": {
+    "mode": "local_dry_run",
+    "externalCalls": false,
+    "workspaceSource": "content/workspace.json"
+  }
+}

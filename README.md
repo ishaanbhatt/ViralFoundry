@@ -20,6 +20,7 @@ The pipeline starts from `content/briefs.json` and produces:
 - Dry-run publish payloads under `output/publish/`
 - Dry-run publish ledger entries under `output/publish-ledger/`
 - Manual approval queue items under `output/approvals/`
+- Local workspace and job registry artifacts under `output/workspace/`
 - An operations report and content calendar under `output/operations/`
 
 Use it when you want a repeatable local factory for short-form content ideas, review, and publish preparation before investing in hosted infrastructure, platform upload clients, paid APIs, or paid traffic.
@@ -31,7 +32,8 @@ Use it when you want a repeatable local factory for short-form content ideas, re
 ├── content/
 │   ├── briefs.json              # Input video briefs
 │   ├── brand-kits.json          # Local dry-run brand kit registry input
-│   └── design-system.json       # Visual, motion, audio, and platform rules
+│   ├── design-system.json       # Visual, motion, audio, and platform rules
+│   └── workspace.json           # Local dry-run workspace, permission, and entitlement placeholders
 ├── drafts/                      # Generated per-video draft packages
 ├── output/
 │   ├── brand-kits/              # Brand positioning, voice, visual tokens, compliance, and provenance artifacts
@@ -45,6 +47,7 @@ Use it when you want a repeatable local factory for short-form content ideas, re
 │   ├── publish/                 # Dry-run publishing payloads
 │   ├── publish-ledger/          # Upload status, approval, retry, and platform ID ledger
 │   ├── approvals/               # Manual approval queue before live upload can exist
+│   ├── workspace/               # Workspace/job records that tie together generated artifacts
 │   └── operations/              # Run report and content calendar
 ├── src/                         # Pipeline implementation
 ├── package.json                 # NPM scripts and runtime requirements
@@ -83,7 +86,7 @@ Then run the full local pipeline:
 npm run full
 ```
 
-This command generates local brand-kit artifacts, draft packages, renders MP4s, builds review assets, scores quality, generates dry-run provider contracts, prepares dry-run publish payloads, writes a dry-run publish ledger, creates operations artifacts, and validates the result.
+This command generates local brand-kit artifacts, draft packages, renders MP4s, builds review assets, scores quality, generates dry-run provider contracts, prepares dry-run publish payloads, writes a dry-run publish ledger, creates workspace/job records, creates operations artifacts, and validates the result.
 It also stages manual approval queue items so future upload clients have a human-review boundary to consume.
 
 Expected success output ends with a validation summary similar to:
@@ -149,6 +152,12 @@ npm run approval
 Creates dry-run manual approval queue items in `output/approvals/`. Each item points back to the review board, package, MP4, thumbnail, publish payload, ledger entry, required credential, and idempotency key.
 
 ```bash
+npm run workspace
+```
+
+Creates local dry-run workspace and per-draft job records in `output/workspace/`. Each job ties together the package, MP4, thumbnail, preview, quality report, provider contract, publish payloads, ledger IDs, approval queue items, blockers, and next operator action.
+
+```bash
 npm run operations
 ```
 
@@ -164,7 +173,7 @@ Runs the baseline build flow: generate, render, and review.
 npm run validate
 ```
 
-Validates generated brand kits, packages, videos, thumbnails, previews, manifests, quality reports, provider jobs, publish payloads, publish ledger state, review board output, and operations artifacts.
+Validates generated brand kits, packages, videos, thumbnails, previews, manifests, quality reports, provider jobs, publish payloads, publish ledger state, approval queue state, workspace/job records, review board output, and operations artifacts.
 
 ```bash
 npm run full
@@ -206,6 +215,14 @@ Brand positioning, voice, visual tokens, typography notes, placeholder brand ass
 - `output/brand-kits/brand-kit-summary.md`
 
 This is still local dry-run state. Hosted accounts, workspace ownership, persisted brand kits, uploaded brand assets, and permission checks do not exist yet.
+
+Workspace placeholders live in `content/workspace.json`. `npm run workspace` turns the current local outputs into:
+
+- `output/workspace/index.json`
+- `output/workspace/jobs/<slug>.job.json`
+- `output/workspace/workspace-summary.md`
+
+These records are shaped like hosted job state, but they are not real account or billing state. Live upload permissions remain disabled until auth, workspace membership, durable approvals, object storage, credentials, and billing exist.
 
 Generated packages include concrete design artifacts:
 

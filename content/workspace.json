@@ -1,0 +1,38 @@
+{
+  "id": "viral-foundry-local",
+  "name": "ViralFoundry Local Workspace",
+  "owner": {
+    "operatorId": "local-operator-placeholder",
+    "displayName": "Local Operator",
+    "contact": "not_configured"
+  },
+  "defaultBrandKitSlug": "local-video-draft-machine",
+  "plan": {
+    "tier": "local_builder",
+    "mode": "dry_run",
+    "livePublishingEnabled": false
+  },
+  "permissions": {
+    "canGenerateDrafts": true,
+    "canRenderLocalVideos": true,
+    "canCreateProviderContracts": true,
+    "canPreparePublishPayloads": true,
+    "canApproveLiveUpload": false,
+    "canPublishLive": false
+  },
+  "entitlements": {
+    "providerJobs": "dry_run_only",
+    "publishPayloads": "dry_run_only",
+    "approvalQueue": "manual_review_required",
+    "workspaceRegistry": "local_only"
+  },
+  "provenance": {
+    "source": "content/workspace.json",
+    "mode": "local_dry_run",
+    "externalCalls": false,
+    "notes": [
+      "Workspace and job registry artifacts are generated from local pipeline outputs only.",
+      "Live upload and paid provider execution remain disabled until credentials, approvals, and durable accounts exist."
+    ]
+  }
+}
