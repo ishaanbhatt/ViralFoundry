@@ -37,6 +37,7 @@ PYTHONPATH=src python3 -m viralfoundry init-db
 PYTHONPATH=src python3 -m viralfoundry plan --days 7 --out var/outbox/plan.json
 PYTHONPATH=src python3 -m viralfoundry draft --plan var/outbox/plan.json --out var/drafts
 PYTHONPATH=src python3 -m viralfoundry render --draft-index var/drafts/index.json --out var/renders
+PYTHONPATH=src python3 -m viralfoundry upload-youtube --draft-index var/drafts/index.json --render-dir var/renders --owner-approved
 PYTHONPATH=src python3 -m viralfoundry publish-dry-run --plan var/outbox/plan.json
 PYTHONPATH=src python3 -m viralfoundry ingest-sample-metrics
 PYTHONPATH=src python3 -m viralfoundry rank
@@ -72,6 +73,16 @@ PYTHONPATH=src python3 -m viralfoundry render --draft-index var/drafts/index.jso
 
 Use `--limit N` for a smaller render batch. Each render writes `render.mp4` and `preflight.json`; attempts are also stored in SQLite so failed renders remain retryable. The local preflight checks resolution, codec, duration tolerance, audio presence, loudness, caption burn-in metadata, safe-margin metadata, and sustained black frames.
 
+## YouTube Uploads
+
+Phase 3 starts with YouTube Shorts because the official Data API path supports media upload through `videos.insert`. The local command defaults to a safe dry run that validates owner approval, policy state, rendered MP4 presence, and render preflight before writing an auditable upload payload:
+
+```bash
+PYTHONPATH=src python3 -m viralfoundry upload-youtube --draft-index var/drafts/index.json --render-dir var/renders --owner-approved
+```
+
+Add `--execute` only after a YouTube OAuth access token with the `https://www.googleapis.com/auth/youtube.upload` scope is available in `YOUTUBE_ACCESS_TOKEN`. The provider uploads with `privacyStatus=private` by default, sets `status.containsSyntheticMedia` from the draft policy disclosure decision, and records upload attempts in SQLite.
+
 ## Current Capabilities
 
 - Niche configuration in `config/niches.json`.
@@ -80,13 +91,14 @@ Use `--limit N` for a smaller render batch. Each render writes `render.mp4` and 
 - SQLite persistence for content items, publish jobs, metrics, and performance scores.
 - Local draft packages with script, caption variants, voice manifest, render manifest, policy output, and provenance metadata.
 - Local 9:16 MP4 rendering with preflight reports and persisted retryable render attempts.
+- YouTube Shorts upload preflight plus official Data API dry-run payloads, with optional private upload execution when OAuth is configured.
 - Dry-run publisher that writes outbox payloads instead of touching real accounts.
 - Engagement scoring that normalizes views, engagement, completion proxy, follower deltas, revenue, and policy risk.
 
 ## Next Build Steps
 
-1. Add a minimal dashboard for approval, calendar, renders, and metrics.
-2. Integrate YouTube upload first because the official API path is comparatively clear.
+1. Complete Google OAuth token acquisition and refresh storage for the YouTube provider.
+2. Add a minimal dashboard for approval, calendar, renders, uploads, and metrics.
 3. Add TikTok and Instagram once app review, OAuth, and account setup are ready.
 4. Replace local generation stubs with provider-backed generation where it improves quality and remains policy-compliant.
 

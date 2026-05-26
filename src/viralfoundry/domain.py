@@ -31,6 +31,12 @@ class RenderStatus(str, Enum):
     FAIL = "fail"
 
 
+class UploadStatus(str, Enum):
+    DRY_RUN = "dry_run"
+    SUCCESS = "success"
+    FAIL = "fail"
+
+
 @dataclass
 class NicheConfig:
     id: str
@@ -86,6 +92,12 @@ class ContentIdea:
     monetization_routes: List[str]
     uses_ai_generated_media: bool
     requires_source_permission: bool
+    angle: str = ""
+    value_proposition: str = ""
+    platform_fit: Dict[str, str] = field(default_factory=dict)
+    score: float = 0.0
+    rank: int = 0
+    scoring_reasons: List[str] = field(default_factory=list)
     permission_status: Optional[str] = None
     citations_required: bool = False
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
@@ -216,6 +228,23 @@ class RenderResult:
         data = asdict(self)
         data["status"] = self.status.value
         data["preflight"] = self.preflight.to_dict()
+        return data
+
+
+@dataclass
+class UploadResult:
+    publish_job_id: str
+    provider: str
+    platform: str
+    video_uri: str
+    payload_uri: str
+    status: UploadStatus
+    error_message: str
+    created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+    def to_dict(self) -> Dict[str, Any]:
+        data = asdict(self)
+        data["status"] = self.status.value
         return data
 
 

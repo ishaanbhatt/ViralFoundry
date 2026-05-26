@@ -12,6 +12,7 @@ from .planner import load_config, plan_content, plans_to_json
 from .providers.dry_run import publish_dry_run
 from .providers.local_generation import write_draft_packages
 from .providers.local_render import render_from_index
+from .providers.youtube_upload import upload_youtube_from_index
 from .storage import init_db, insert_metrics, insert_scores, latest_metric_snapshots, save_plans
 
 
@@ -21,6 +22,7 @@ DEFAULT_DB = PROJECT_ROOT / "var" / "viralfoundry.db"
 DEFAULT_PLAN = PROJECT_ROOT / "var" / "outbox" / "plan.json"
 DEFAULT_DRAFTS = PROJECT_ROOT / "var" / "drafts"
 DEFAULT_RENDERS = PROJECT_ROOT / "var" / "renders"
+DEFAULT_UPLOADS = PROJECT_ROOT / "var" / "uploads"
 
 
 def main(argv: Optional[List[str]] = None) -> int:
@@ -50,6 +52,20 @@ def main(argv: Optional[List[str]] = None) -> int:
     render_parser.add_argument("--limit", type=int)
     render_parser.add_argument("--ffmpeg-bin", default="ffmpeg")
     render_parser.add_argument("--ffprobe-bin", default="ffprobe")
+
+    upload_youtube_parser = sub.add_parser("upload-youtube")
+    upload_youtube_parser.add_argument("--draft-index", type=Path, default=DEFAULT_DRAFTS / "index.json")
+    upload_youtube_parser.add_argument("--render-dir", type=Path, default=DEFAULT_RENDERS)
+    upload_youtube_parser.add_argument("--out", type=Path, default=DEFAULT_UPLOADS / "youtube")
+    upload_youtube_parser.add_argument("--limit", type=int)
+    upload_youtube_parser.add_argument("--privacy-status", default="private", choices=["private", "unlisted", "public"])
+    upload_youtube_parser.add_argument("--category-id", default="24")
+    upload_youtube_parser.add_argument("--owner-approved", action="store_true")
+    upload_youtube_parser.add_argument(
+        "--execute",
+        action="store_true",
+        help="Perform the real YouTube upload. Without this flag, writes upload payloads only.",
+    )
 
     sub.add_parser("ingest-sample-metrics")
     sub.add_parser("rank")
@@ -99,6 +115,26 @@ def main(argv: Optional[List[str]] = None) -> int:
         passed = sum(1 for result in results if result.status.value == "pass")
         failed = len(results) - passed
         print(f"Rendered {passed} packages to {args.out}; {failed} failed preflight")
+        return 1 if failed else 0
+
+    if args.command == "upload-youtube":
+        results = upload_youtube_from_index(
+            db_path=args.db,
+            index_path=args.draft_index,
+            render_dir=args.render_dir,
+            out_dir=args.out,
+            limit=args.limit,
+            dry_run=not args.execute,
+            owner_approved=args.owner_approved,
+            privacy_status=args.privacy_status,
+            category_id=args.category_id,
+        )
+        succeeded = sum(1 for result in results if result.status.value == "success")
+        dry_run = sum(1 for result in results if result.status.value == "dry_run")
+        failed = sum(1 for result in results if result.status.value == "fail")
+        print(f"YouTube upload results: {succeeded} uploaded, {dry_run} dry-run payloads, {failed} failed")
+        if dry_run:
+            print(f"Payloads: {args.out}")
         return 1 if failed else 0
 
     if args.command == "ingest-sample-metrics":

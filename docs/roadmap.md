@@ -23,12 +23,14 @@ Exit criteria:
 
 ## Phase 1: Generation MVP
 
-Status: complete for the selected local draft-package slice. Provider-backed generation can still replace the local stubs later, but the Phase 1 MVP now produces reviewable draft packages from an existing plan file.
+Status: complete for the selected local idea and draft-package slice. Provider-backed generation can still replace the local stubs later, but the Phase 1 MVP now produces ranked, inspectable ideas and reviewable draft packages from an existing plan file.
 
 Goal: produce publish-ready drafts without public posting.
 
 Build:
 
+- Complete: deterministic ranked idea generator with hook, angle, audience, value proposition, platform fit, score, rank, and scoring reasons.
+- Complete: plan output carries idea metadata in `render_spec["idea"]` for downstream generation and analytics.
 - Complete: draft-package CLI that reads `var/outbox/plan.json` and writes draft artifacts under `var/drafts/`.
 - Complete: script or beat-sheet generator.
 - Complete: caption and hashtag variants.
@@ -54,7 +56,8 @@ Validation evidence:
 
 - Complete: `PYTHONPATH=src python3 -m viralfoundry draft --plan var/outbox/plan.json --out var/drafts --limit 3` wrote 3 draft packages and `var/drafts/index.json`.
 - Complete: sample package contained `script`, `caption_variants`, `voice`, `render_manifest`, `provenance`, and `policy`.
-- Complete: `PYTHONPATH=src python3 -m unittest discover -s tests` ran 6 tests successfully.
+- Complete: `PYTHONPATH=src python3 -m viralfoundry --db /tmp/viralfoundry-e2e.db plan --days 1 --out /tmp/viralfoundry-e2e/plan.json` wrote 21 planned jobs with ranked idea metadata.
+- Complete: `PYTHONPATH=src python3 -m unittest discover -s tests` ran 17 tests successfully.
 
 ## Phase 2: Render and QA
 
@@ -85,21 +88,34 @@ Validation evidence:
 
 ## Phase 3: YouTube First
 
+Status: partially complete. The local YouTube provider now performs policy/render upload preflight, writes official Data API payloads, records upload attempts, and can execute a private resumable upload when OAuth is configured. OAuth setup, refresh-token storage, status polling, and analytics ingestion remain.
+
 Goal: ship the first official publishing integration.
 
 Build:
 
-- Google OAuth.
-- YouTube upload provider.
-- Private upload and scheduled publish flow.
-- Synthetic-media disclosure field.
-- Status polling.
-- YouTube Analytics ingestion.
+- Complete: YouTube upload provider using the official Data API `videos.insert` resumable upload flow.
+- Complete: dry-run upload payloads with endpoint, scope, render URI, draft URI, metadata, and synthetic-media status.
+- Complete: policy block, owner approval, render existence, and render preflight gates before upload.
+- Complete: private upload execution path guarded by `--execute` and `YOUTUBE_ACCESS_TOKEN`.
+- Complete: upload attempts table for dry-run, success, and failure history.
+- Complete: synthetic-media disclosure field mapped to `status.containsSyntheticMedia`.
+- Remaining: Google OAuth consent flow and token refresh storage.
+- Remaining: scheduled publish flow.
+- Remaining: status polling.
+- Remaining: YouTube Analytics ingestion.
 
 Exit criteria:
 
-- One approved video can upload privately.
+- One approved video can upload privately after OAuth is configured.
 - Metrics snapshots populate after publication.
+
+Validation evidence:
+
+- Complete: `PYTHONPATH=src python3 -m viralfoundry --db /tmp/viralfoundry-e2e.db render --draft-index /tmp/viralfoundry-e2e/drafts/index.json --out /tmp/viralfoundry-e2e/renders --limit 6 --ffmpeg-bin /opt/homebrew/bin/ffmpeg --ffprobe-bin /opt/homebrew/bin/ffprobe` rendered 6 MP4s with 0 failed preflights.
+- Complete: `PYTHONPATH=src python3 -m viralfoundry --db /tmp/viralfoundry-e2e.db upload-youtube --draft-index /tmp/viralfoundry-e2e/drafts/index.json --render-dir /tmp/viralfoundry-e2e/renders --out /tmp/viralfoundry-e2e/uploads/youtube --limit 1 --owner-approved` wrote 1 YouTube dry-run upload payload with 0 failures.
+- Complete: upload payload included `https://www.googleapis.com/upload/youtube/v3/videos`, scope `https://www.googleapis.com/auth/youtube.upload`, `privacyStatus=private`, and `containsSyntheticMedia=true`.
+- Complete: `PYTHONPATH=src python3 -m unittest discover -s tests` ran 17 tests successfully.
 
 ## Phase 4: Dashboard
 

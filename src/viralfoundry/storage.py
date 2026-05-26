@@ -45,6 +45,18 @@ CREATE TABLE IF NOT EXISTS render_attempts (
   created_at TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS upload_attempts (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  publish_job_id TEXT NOT NULL,
+  provider TEXT NOT NULL,
+  platform TEXT NOT NULL,
+  video_uri TEXT NOT NULL,
+  payload_uri TEXT NOT NULL,
+  status TEXT NOT NULL,
+  error_message TEXT NOT NULL,
+  created_at TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS metric_snapshots (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   publish_job_id TEXT NOT NULL,
@@ -188,6 +200,46 @@ def list_render_attempts(db_path: Path) -> List[sqlite3.Row]:
     init_db(db_path)
     with connect(db_path) as conn:
         return list(conn.execute("SELECT * FROM render_attempts ORDER BY id"))
+
+
+def record_upload_result(
+    db_path: Path,
+    publish_job_id: str,
+    provider: str,
+    platform: str,
+    video_uri: str,
+    payload_uri: str,
+    status: str,
+    error_message: str = "",
+) -> None:
+    init_db(db_path)
+    created_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    with connect(db_path) as conn:
+        conn.execute(
+            """
+            INSERT INTO upload_attempts (
+              publish_job_id, provider, platform, video_uri, payload_uri,
+              status, error_message, created_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                publish_job_id,
+                provider,
+                platform,
+                video_uri,
+                payload_uri,
+                status,
+                error_message,
+                created_at,
+            ),
+        )
+        conn.commit()
+
+
+def list_upload_attempts(db_path: Path) -> List[sqlite3.Row]:
+    init_db(db_path)
+    with connect(db_path) as conn:
+        return list(conn.execute("SELECT * FROM upload_attempts ORDER BY id"))
 
 
 def insert_metrics(db_path: Path, snapshots: Iterable[MetricSnapshot]) -> None:

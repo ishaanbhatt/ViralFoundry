@@ -18,9 +18,11 @@ The current scaffold implements:
 
 - JSON niche configuration.
 - Schedule planner.
+- Deterministic ranked idea generation.
 - Policy gate.
 - Local draft package generator.
 - Local FFmpeg render and preflight worker.
+- YouTube upload preflight and official Data API payload writer.
 - SQLite ledger.
 - Dry-run publisher.
 - Sample metrics ingestion.
@@ -33,6 +35,7 @@ PYTHONPATH=src python3 -m viralfoundry init-db
 PYTHONPATH=src python3 -m viralfoundry plan --days 7
 PYTHONPATH=src python3 -m viralfoundry draft
 PYTHONPATH=src python3 -m viralfoundry render
+PYTHONPATH=src python3 -m viralfoundry upload-youtube --owner-approved
 PYTHONPATH=src python3 -m viralfoundry publish-dry-run
 PYTHONPATH=src python3 -m viralfoundry ingest-sample-metrics
 PYTHONPATH=src python3 -m viralfoundry rank
@@ -216,5 +219,5 @@ Phase three:
 - Object storage such as S3, GCS, or R2.
 - Secrets manager.
 - Observability and traces.
-- Direct YouTube provider.
+- Direct YouTube provider with OAuth token storage, status polling, and analytics ingestion.
 - TikTok and Instagram provider adapters.
